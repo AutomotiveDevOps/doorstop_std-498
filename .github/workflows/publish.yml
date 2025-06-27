@@ -60,22 +60,8 @@ jobs:
         # Convert requirements from YAML to Doorstop format
         python convert_to_doorstop.py
         
-        # Export all documents using doorstop directly
-        for doc in SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP; do
-          if [ -d "mil-std-498-doorstop/$doc" ]; then
-            echo "Exporting $doc..."
-            doorstop --project mil-std-498-doorstop export $doc publications/markdown/$doc.yml
-          fi
-        done
-        
-        # Validate all documents
-        for doc in SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP; do
-          if [ -d "mil-std-498-doorstop/$doc" ]; then
-            echo "Validating $doc..."
-            doorstop --project mil-std-498-doorstop validate $doc
-          fi
-        done
-        cd ..
+        # Export all documents using doorstop Python API
+        python run_doorstop_export.py
         
         # Generate reports
         mkdir -p reports
