@@ -31,6 +31,7 @@ REPORTS_DIR := reports
 all: ${VENV} install-deps convert-requirements generate-all
 
 # Create virtual environment
+.PHONY: ${VENV}
 ${VENV}:
 	${PYTHON} -m venv ${VENV}
 	@echo "Virtual environment created: ${VENV}"
