@@ -34,7 +34,9 @@ all: ${VENV} install-deps convert-requirements generate-all
 .PHONY: ${VENV}
 ${VENV}:
 	${PYTHON} -m venv ${VENV}
-	@echo "Virtual environment created: ${VENV}"
+	${VENV}/bin/pip install --upgrade pip
+	${VENV}/bin/pip install doorstop python-frontmatter
+	@echo "Virtual environment created and dependencies installed: ${VENV}"
 
 # Install dependencies
 .PHONY: install-deps
