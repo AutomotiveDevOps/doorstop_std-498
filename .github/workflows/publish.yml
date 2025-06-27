@@ -52,8 +52,33 @@ jobs:
         
     - name: Build project
       run: |
-        make clean
-        make all
+        # Clean previous outputs
+        rm -rf publications/
+        rm -rf output/
+        rm -rf mil-std-498-doorstop/
+        
+        # Convert requirements from YAML to Doorstop format
+        python convert_to_doorstop.py
+        
+        # Export all documents using doorstop directly
+        for doc in SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP; do
+          if [ -d "mil-std-498-doorstop/$doc" ]; then
+            echo "Exporting $doc..."
+            doorstop export mil-std-498-doorstop/$doc publications/markdown/$doc.md
+          fi
+        done
+        
+        # Validate all documents
+        for doc in SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP; do
+          if [ -d "mil-std-498-doorstop/$doc" ]; then
+            echo "Validating $doc..."
+            doorstop validate mil-std-498-doorstop/$doc
+          fi
+        done
+        
+        # Generate reports
+        mkdir -p reports
+        python generate_reports.py
         
     - name: Generate HTML files
       run: |
