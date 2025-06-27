@@ -3,4 +3,4 @@ settings:
   itemformat: markdown
   parent: SRS
   prefix: STD
-  sep: ''
+  sep: '' 
