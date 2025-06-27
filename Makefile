@@ -62,7 +62,7 @@ create-dirs:
 
 # Export all documents to YAML format
 .PHONY: export-all
-export-all: ${VENV}
+export-all: ${VENV} create-dirs
 	@echo "Exporting all documents to YAML format..."
 	@for doc in ${DOCUMENTS}; do \
 		echo "Exporting $$doc..."; \
@@ -77,7 +77,7 @@ publish-all: ${VENV} publish-html publish-markdown publish-pdf
 
 # Publish to HTML format
 .PHONY: publish-html
-publish-html: ${VENV}
+publish-html: ${VENV} create-dirs
 	@echo "Publishing documents to HTML format..."
 	@echo "WARNING: HTML publishing may hang due to PlantUML extension. Use publish-markdown for reliable output."
 	@mkdir -p ${PUBLISH_DIR}/html
@@ -89,7 +89,7 @@ publish-html: ${VENV}
 
 # Publish to Markdown format
 .PHONY: publish-markdown
-publish-markdown: ${VENV}
+publish-markdown: ${VENV} create-dirs
 	@echo "Publishing documents to Markdown format..."
 	@mkdir -p ${PUBLISH_DIR}/markdown
 	@for doc in ${DOCUMENTS}; do \
@@ -100,7 +100,7 @@ publish-markdown: ${VENV}
 
 # Publish to PDF format (via LaTeX)
 .PHONY: publish-pdf
-publish-pdf: ${VENV}
+publish-pdf: ${VENV} create-dirs
 	@echo "Publishing documents to LaTeX (PDF) format..."
 	@for doc in ${DOCUMENTS}; do \
 		echo "Publishing $$doc to LaTeX..."; \
