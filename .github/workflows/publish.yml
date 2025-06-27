@@ -64,7 +64,7 @@ jobs:
         for doc in SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP; do
           if [ -d "mil-std-498-doorstop/$doc" ]; then
             echo "Exporting $doc..."
-            doorstop export mil-std-498-doorstop/$doc publications/markdown/$doc.md
+            doorstop export mil-std-498-doorstop/$doc publications/markdown/$doc.yml
           fi
         done
         
@@ -82,19 +82,8 @@ jobs:
         
     - name: Generate HTML files
       run: |
-        # Create HTML files from markdown (since HTML publishing hangs)
-        mkdir -p publications/html
-        for doc in SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP; do
-          if [ -f "publications/markdown/$doc.md" ]; then
-            echo "Converting $doc.md to HTML..."
-            pandoc "publications/markdown/$doc.md" \
-              --from markdown \
-              --to html \
-              --standalone \
-              --css template/doorstop.css \
-              --output "publications/html/$doc.html"
-          fi
-        done
+        # Create HTML files from YAML (since doorstop exports to YAML)
+        python convert_yaml_to_html.py
         
     - name: Create index page
       run: |
