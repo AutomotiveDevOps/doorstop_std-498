@@ -1,0 +1,224 @@
+building tree...
+SIOM-001:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: 2N50x_4NBM9FrxCIF78xEuKWaiV_IvlSWBpj0jz8lvA=
+  text: |
+    The manual **shall** be identified by the following information:
+    **Manual Name**: [Manual Name]
+    **Manual Identifier**: [SIOM-001]
+    **Version**: 1.0
+    **Classification**: [Unclassified/Classified Level]
+
+    ### 1.2 Manual Overview
+  title: Manual Identification
+  uid: SIOM-001
+
+SIOM-002:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: 7fgc7xaT4lN1guB2QdLHogVygPlc_iYuDcERL9O75Oc=
+  text: |
+    The manual **shall** provide software installation procedures
+    The manual **shall** describe software operation and usage
+    The manual **shall** cover maintenance and troubleshooting procedures
+
+    ## 2. Referenced Documents
+  title: Manual Purpose
+  uid: SIOM-002
+
+SIOM-003:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: JC9IxqWITS2xrKVO3hn8QYY75g_H0meHQeAgpMGnAH4=
+  text: |
+    MIL-STD-498: Software Development and Documentation
+    [Other applicable standards]
+
+    ## 3. System Overview
+  title: Referenced Standards
+  uid: SIOM-003
+
+SIOM-004:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: scIqtUjHqfZtDXpXLjbljZUeyEsQOAnWTnLXfFOo52U=
+  text: |
+    The manual **shall** describe the software system and its components
+    The manual **shall** specify system requirements and dependencies
+    The manual **shall** provide software architecture overview
+
+    ## 4. Installation Procedures
+
+    ### 4.1 Pre-Installation Requirements
+  title: Software Description
+  uid: SIOM-004
+
+SIOM-005:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: mtMtFefUP9gLLzjPlYGwRzTTkoU0T21cz-ibwRT6-38=
+  text: |
+    The manual **shall** specify hardware and software prerequisites
+    The manual **shall** describe system preparation procedures
+    The manual **shall** include compatibility verification steps
+
+    ### 4.2 Installation Process
+  title: Prerequisites
+  uid: SIOM-005
+
+SIOM-006:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: S6fiKuMZxEmgCxhp_8ZDBQHCvWPeXn9qcY8Ty9ujRUg=
+  text: |
+    The manual **shall** provide step-by-step installation instructions
+    The manual **shall** include configuration procedures
+    The manual **shall** describe installation verification methods
+
+    ### 4.3 Post-Installation Setup
+  title: Installation Steps
+  uid: SIOM-006
+
+SIOM-007:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: GMGj5sKETmtcgYM9n4Mp_gYCk5NbR5SH3i7no7zLQEc=
+  text: |
+    The manual **shall** describe post-installation configuration
+    The manual **shall** specify user account setup procedures
+    The manual **shall** include system integration steps
+
+    ## 5. Operation Procedures
+
+    ### 5.1 System Startup
+  title: Setup Procedures
+  uid: SIOM-007
+
+SIOM-008:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: G_rD8NCMWiL3oZWXzpyU-9VWb3rjCXLR14ho5L-qL-A=
+  text: |
+    The manual **shall** describe system startup procedures
+    The manual **shall** specify initialization processes
+    The manual **shall** include startup verification steps
+
+    ### 5.2 Normal Operations
+  title: Startup Procedures
+  uid: SIOM-008
+
+SIOM-009:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: Yi24nBLrcpRZmGae_0COrjELRBbVQBDe22LGC84N_QA=
+  text: |
+    The manual **shall** describe normal operational procedures
+    The manual **shall** specify user interface usage
+    The manual **shall** include data management procedures
+
+    ### 5.3 System Shutdown
+  title: Operational Procedures
+  uid: SIOM-009
+
+SIOM-010:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: zRgT3yV1agNMpcp3mqqGl9edFzjeTkLoBhaopJhxpR8=
+  text: |
+    The manual **shall** describe system shutdown procedures
+    The manual **shall** specify data backup procedures
+    The manual **shall** include shutdown verification steps
+
+    ## 6. Maintenance Procedures
+  title: Shutdown Procedures
+  uid: SIOM-010
+
+SIOM-011:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: MvtrUkMKgA_011ZRII6SU23d6UeKNJj8mSOqI6rBmKo=
+  text: |
+    The manual **shall** describe routine maintenance procedures
+    The manual **shall** specify backup and recovery procedures
+    The manual **shall** include system monitoring procedures
+
+    ## 7. Troubleshooting
+  title: Maintenance Activities
+  uid: SIOM-011
+
+SIOM-012:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: AwJz79JG2tqy9OEp2tg8dBNGmxA6AkmgEobmEWdzViA=
+  text: |
+    The manual **shall** provide troubleshooting procedures
+    The manual **shall** include common problem solutions
+    The manual **shall** describe escalation procedures
+
+    ## 8. Notes
+    **SIOM**: Software Installation and Operation Manual
+    **System**: Software system and its components
+  title: Problem Resolution
+  uid: SIOM-012
+

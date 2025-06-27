@@ -1,0 +1,206 @@
+building tree...
+SUM-001:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: XesMDfedmXegU1zgQT9uRU6UAUNqbLAZ-ry03lr-k-4=
+  text: |
+    The manual **shall** be identified by the following information:
+    **Manual Name**: [Manual Name]
+    **Manual Identifier**: [SUM-001]
+    **Version**: 1.0
+    **Classification**: [Unclassified/Classified Level]
+
+    ### 1.2 Manual Overview
+  title: Manual Identification
+  uid: SUM-001
+
+SUM-002:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: R6eS6lb3f0I_pKeeuQ0Pv5rGZQMEYv72ld9YMA2t444=
+  text: |
+    The manual **shall** provide user instructions and guidance
+    The manual **shall** describe software features and functionality
+    The manual **shall** cover troubleshooting and help procedures
+
+    ## 2. Referenced Documents
+  title: Manual Purpose
+  uid: SUM-002
+
+SUM-003:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: aXh51797c1tkbIMJBuN5-vEvXK7aD5-8JiqwfyI4h10=
+  text: |
+    MIL-STD-498: Software Development and Documentation
+    [Other applicable standards]
+
+    ## 3. Software Overview
+  title: Referenced Standards
+  uid: SUM-003
+
+SUM-004:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: Cz36hcsHDnp6OM0itOlbZeIBOOZfYpzlqi5ztnBee_g=
+  text: |
+    The manual **shall** describe the software system and its purpose
+    The manual **shall** specify software features and capabilities
+    The manual **shall** provide system requirements and compatibility
+
+    ## 4. Getting Started
+
+    ### 4.1 Installation and Setup
+  title: Software Description
+  uid: SUM-004
+
+SUM-005:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: ALkdQIZWP9U8gXIasByjqNYJrUYTECN8zACGOKD50cg=
+  text: |
+    The manual **shall** provide installation and setup instructions
+    The manual **shall** describe system requirements and prerequisites
+    The manual **shall** include configuration procedures
+
+    ### 4.2 First Use
+  title: Initial Setup
+  uid: SUM-005
+
+SUM-006:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: UXYD5fYjaeTwO_CpjTYRvomPTqA1Nq3YN0XCO8EyjTA=
+  text: |
+    The manual **shall** provide getting started instructions
+    The manual **shall** describe basic navigation and interface
+    The manual **shall** include tutorial or walkthrough procedures
+
+    ## 5. User Interface
+  title: Getting Started
+  uid: SUM-006
+
+SUM-007:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: tOTiodf5oHuSF3Q-mDgXo1oFrutc7clyUJbhxRaIyQ0=
+  text: |
+    The manual **shall** describe the user interface components
+    The manual **shall** specify menu structures and navigation
+    The manual **shall** define user interaction patterns
+
+    ## 6. Features and Functions
+
+    ### 6.1 Core Features
+  title: Interface Description
+  uid: SUM-007
+
+SUM-008:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: A0zTlRv_XaN49k50clrTNUdibF7y9-wXp_GOC_i7Pkw=
+  text: |
+    The manual **shall** describe all software features and functions
+    The manual **shall** provide step-by-step usage instructions
+    The manual **shall** include examples and use cases
+
+    ### 6.2 Advanced Features
+  title: Feature Descriptions
+  uid: SUM-008
+
+SUM-009:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: ITAp6Pa5V6WnZi8BU-RVzL1xopru5ROOqGo0xzo0ldw=
+  text: |
+    The manual **shall** describe advanced features and capabilities
+    The manual **shall** provide advanced usage instructions
+    The manual **shall** include tips and best practices
+
+    ## 7. Data Management
+  title: Advanced Usage
+  uid: SUM-009
+
+SUM-010:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: jln_oV5ex07Tdo0t2WoNXx1HA6c2mf0IMJoFu8iadxk=
+  text: |
+    The manual **shall** describe data input and output procedures
+    The manual **shall** specify data storage and retrieval methods
+    The manual **shall** include data backup and recovery procedures
+
+    ## 8. Troubleshooting
+  title: Data Operations
+  uid: SUM-010
+
+SUM-011:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: 1913OtLu-wEqAZXkJzgz5HxA5xX741SjvU0in722JKY=
+  text: |
+    The manual **shall** provide troubleshooting procedures
+    The manual **shall** include common problem solutions
+    The manual **shall** describe help and support resources
+
+    ## 9. Notes
+    **SUM**: Software User Manual
+    **User**: End user of the software system
+  title: Problem Resolution
+  uid: SUM-011
+

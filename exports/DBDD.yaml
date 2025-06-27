@@ -1,0 +1,204 @@
+building tree...
+DBDD-001:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: K4AWrcldHAq17TUJ1-l9Nwruy4cwZCr7MXaK1IHT0Is=
+  text: |
+    The document **shall** be identified by the following information:
+    **Document Name**: [Document Name]
+    **Document Identifier**: [DBDD-001]
+    **Version**: 1.0
+    **Classification**: [Unclassified/Classified Level]
+
+    ### 1.2 Document Overview
+  title: Document Identification
+  uid: DBDD-001
+
+DBDD-002:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: HUAnbugtpBqi3zCudpP227GOyR4EPMUs5p3iZQRvjm8=
+  text: |
+    The document **shall** describe the database design and structure
+    The document **shall** define data models and relationships
+    The document **shall** specify database schema and constraints
+
+    ## 2. Referenced Documents
+  title: Document Purpose
+  uid: DBDD-002
+
+DBDD-003:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: f3TMcbo21wkp93OovFMix_4MeNaqRnN2b92TC5Uxyho=
+  text: |
+    MIL-STD-498: Software Development and Documentation
+    [Other applicable standards]
+
+    ## 3. Database Overview
+  title: Referenced Standards
+  uid: DBDD-003
+
+DBDD-004:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: Hxr3QKxicJwSLxaVupu6WvtASDgn76JipB8Ntn8YmqE=
+  text: |
+    The document **shall** provide an overview of the database system
+    The document **shall** describe the database management system (DBMS)
+    The document **shall** specify database version and configuration
+
+    ## 4. Data Model
+
+    ### 4.1 Conceptual Data Model
+  title: System Description
+  uid: DBDD-004
+
+DBDD-005:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: YYqaqxfx7LKIRh0dYOmEINgWoZLCOb8isi_VyIXLN0c=
+  text: |
+    The document **shall** describe the conceptual data model
+    The document **shall** define entities and their relationships
+    The document **shall** include entity-relationship diagrams
+
+    ### 4.2 Logical Data Model
+  title: Conceptual Design
+  uid: DBDD-005
+
+DBDD-006:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: KvhZCCdQxnv9tZRU9PASQ8ssvuXTSlTkVYT6ppsmgB4=
+  text: |
+    The document **shall** describe the logical data model
+    The document **shall** define tables, columns, and data types
+    The document **shall** specify primary and foreign keys
+
+    ### 4.3 Physical Data Model
+  title: Logical Design
+  uid: DBDD-006
+
+DBDD-007:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: 7JOKqswzxFWSAQlXMGXDs64BzyYIEez_0X4J--drFv8=
+  text: |
+    The document **shall** describe the physical data model
+    The document **shall** specify storage and indexing strategies
+    The document **shall** define partitioning and clustering
+
+    ## 5. Database Schema
+  title: Physical Design
+  uid: DBDD-007
+
+DBDD-008:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: Y_JjnX0SaQHNg58EifIhwYW6vAqakFQ_0wMwN891fQE=
+  text: |
+    The document **shall** provide complete database schema
+    The document **shall** include table definitions and constraints
+    The document **shall** specify data validation rules
+
+    ## 6. Data Dictionary
+  title: Schema Definition
+  uid: DBDD-008
+
+DBDD-009:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: HgzdypKOtcq0SKa6MN7pcj_67XrjepFHz0Ehhknavyw=
+  text: |
+    The document **shall** provide a comprehensive data dictionary
+    The document **shall** define all data elements and their meanings
+    The document **shall** specify data formats and constraints
+
+    ## 7. Security and Access Control
+  title: Data Definitions
+  uid: DBDD-009
+
+DBDD-010:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: v-w4j-wYKYwSgMM-puYOTc-CnaPkUjcZD8myw0CcrhM=
+  text: |
+    The document **shall** describe database security measures
+    The document **shall** define user roles and permissions
+    The document **shall** specify data encryption requirements
+
+    ## 8. Performance Considerations
+  title: Security Measures
+  uid: DBDD-010
+
+DBDD-011:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: kiE1EuSU_Q53yg5iCY-nbzPdkBjOE_0MBOA7dHbx_c8=
+  text: |
+    The document **shall** describe performance optimization strategies
+    The document **shall** specify indexing requirements
+    The document **shall** include query optimization guidelines
+
+    ## 9. Notes
+    **DBDD**: Database Design Document
+    **DBMS**: Database Management System
+  title: Performance Optimization
+  uid: DBDD-011
+

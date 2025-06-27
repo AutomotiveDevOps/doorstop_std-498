@@ -1,0 +1,167 @@
+building tree...
+SCOM-001:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: s9CGK0Isw8Telj7I9miiHsrmUfGynnNzMHC0Egdfjak=
+  text: |
+    The document **shall** be identified by the following information:
+    **Document Name**: [Document Name]
+    **Document Identifier**: [SCOM-001]
+    **Version**: 1.0
+    **Classification**: [Unclassified/Classified Level]
+
+    ### 1.2 Document Overview
+  title: Document Identification
+  uid: SCOM-001
+
+SCOM-002:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: 3OPDDa9KtoMYg7JcednLSiyRP1_uIbsNB-IXBz2GzmU=
+  text: |
+    The document **shall** define configuration management procedures and policies
+    The document **shall** specify version control and change management processes
+    The document **shall** describe configuration identification and control methods
+
+    ## 2. Referenced Documents
+  title: Document Purpose
+  uid: SCOM-002
+
+SCOM-003:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: Iaqs26pfR5z8lhD1r1OfPq9EGUPq5R1Fsz7fhix96vo=
+  text: |
+    MIL-STD-498: Software Development and Documentation
+    [Other applicable standards]
+
+    ## 3. Configuration Management Overview
+  title: Referenced Standards
+  uid: SCOM-003
+
+SCOM-004:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: MGUx2eaOYGZzIdTqWD-4UFRY-kkNITch5FRG6xQLerE=
+  text: |
+    The document **shall** describe the configuration management process
+    The document **shall** define CM roles and responsibilities
+    The document **shall** specify CM tools and infrastructure
+
+    ## 4. Configuration Identification
+  title: CM Process Description
+  uid: SCOM-004
+
+SCOM-005:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: AfOi3iFFfHk3TFsCYf93Zm7OCTjLynAXceosfzc6Tns=
+  text: |
+    The document **shall** define configuration item identification methods
+    The document **shall** specify naming conventions and version numbering
+    The document **shall** describe baseline identification procedures
+
+    ## 5. Configuration Control
+  title: Identification Methods
+  uid: SCOM-005
+
+SCOM-006:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: FVAMfYvzFz96CUObqVcmSUsHlO1u1UVEakziIc46BCk=
+  text: |
+    The document **shall** describe change control procedures
+    The document **shall** specify change request and approval processes
+    The document **shall** define configuration control board responsibilities
+
+    ## 6. Configuration Status Accounting
+  title: Control Procedures
+  uid: SCOM-006
+
+SCOM-007:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: dLv3nq9_klYDwtxEAO8T8t0pByvbsqWZ1v9cUraXpso=
+  text: |
+    The document **shall** describe configuration status tracking methods
+    The document **shall** specify status reporting requirements
+    The document **shall** define configuration audit procedures
+
+    ## 7. Configuration Audits
+  title: Status Tracking
+  uid: SCOM-007
+
+SCOM-008:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: yz_CUSC792J9aNG15slCGvl3sx5mMZF6cdA7lN-SpwA=
+  text: |
+    The document **shall** describe functional configuration audits
+    The document **shall** specify physical configuration audits
+    The document **shall** define audit reporting and follow-up procedures
+
+    ## 8. Release Management
+  title: Audit Procedures
+  uid: SCOM-008
+
+SCOM-009:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: CO97intXUrqnOOQf8B1dSSoEQ-CEz5jeEMXRhOsInFU=
+  text: |
+    The document **shall** describe software release procedures
+    The document **shall** specify release packaging and distribution methods
+    The document **shall** define release verification and validation
+
+    ## 9. Notes
+    **SCOM**: Software Configuration Management Plan
+    **CM**: Configuration Management
+    **CI**: Configuration Item
+  title: Release Procedures
+  uid: SCOM-009
+
