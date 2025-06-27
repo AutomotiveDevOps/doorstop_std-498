@@ -50,7 +50,7 @@ jobs:
         echo "## Total Requirements: $(find mil-std-498-doorstop -name "*.md" | wc -l)" >> reports/requirements_summary.md
     
     - name: Upload artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: doorstop-outputs
         path: |
