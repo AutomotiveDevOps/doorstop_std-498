@@ -18,24 +18,36 @@ jobs:
       with:
         python-version: '3.12'
     
-    - name: Install system dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y python3-pip python3-venv
-    
-    - name: Install Python dependencies
+    - name: Install doorstop globally
       run: |
         python3 -m pip install --upgrade pip
         python3 -m pip install doorstop python-frontmatter
     
     - name: Convert requirements
-      run: make convert-requirements
+      run: python3 convert_to_doorstop.py
     
     - name: Export documents
-      run: make export-all
+      run: |
+        mkdir -p exports
+        for doc in SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP; do
+          echo "Exporting $doc..."
+          doorstop export $doc > exports/$doc.yaml
+        done
     
     - name: Generate reports
-      run: make generate-reports
+      run: |
+        mkdir -p reports
+        echo "# MIL-STD-498 Requirements Summary Report" > reports/requirements_summary.md
+        echo "Generated: $(date)" >> reports/requirements_summary.md
+        echo "" >> reports/requirements_summary.md
+        echo "## Document Requirements Count" >> reports/requirements_summary.md
+        echo "" >> reports/requirements_summary.md
+        for doc in SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP; do
+          count=$(find mil-std-498-doorstop/$doc -name "*.md" | wc -l)
+          echo "- **$doc**: $count requirements" >> reports/requirements_summary.md
+        done
+        echo "" >> reports/requirements_summary.md
+        echo "## Total Requirements: $(find mil-std-498-doorstop -name "*.md" | wc -l)" >> reports/requirements_summary.md
     
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
@@ -44,7 +56,6 @@ jobs:
         path: |
           exports/
           reports/
-          publications/
     
     - name: Create summary
       run: |
@@ -56,5 +67,4 @@ jobs:
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### Generated Files:" >> $GITHUB_STEP_SUMMARY
         echo "- YAML exports: \`exports/\`" >> $GITHUB_STEP_SUMMARY
-        echo "- Reports: \`reports/\`" >> $GITHUB_STEP_SUMMARY
-        echo "- Publications: \`publications/\`" >> $GITHUB_STEP_SUMMARY 
+        echo "- Reports: \`reports/\`" >> $GITHUB_STEP_SUMMARY 
