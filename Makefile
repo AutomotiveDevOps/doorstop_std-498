@@ -18,6 +18,10 @@ PIP := ${VENV}/bin/pip
 DOORSTOP := ${VENV}/bin/doorstop
 PYTHON_VENV := ${VENV}/bin/python
 
+# Fallback doorstop command for CI/CD environments
+DOORSTOP_FALLBACK := python3 -m doorstop
+DOORSTOP_SCRIPT := python3 run_doorstop.py
+
 # Doorstop document prefixes
 DOCUMENTS := SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP
 
@@ -28,31 +32,37 @@ REPORTS_DIR := reports
 
 # Default target
 .PHONY: all
-all: ${VENV} install-deps convert-requirements generate-all
+all: install-deps convert-requirements generate-all
 
-# Create virtual environment
+# Create virtual environment with robust error handling
 .PHONY: ${VENV}
 ${VENV}:
-	${PYTHON} -m venv ${VENV}
-	${VENV}/bin/pip install --upgrade pip
-	${VENV}/bin/pip install doorstop python-frontmatter
+	@echo "Creating virtual environment..."
+	@if [ ! -d "${VENV}" ]; then \
+		${PYTHON} -m venv ${VENV} || { echo "Failed to create venv, trying system install..."; exit 1; }; \
+	fi
+	@echo "Installing dependencies in virtual environment..."
+	@${VENV}/bin/pip install --upgrade pip || { echo "Failed to upgrade pip"; exit 1; }
+	@${VENV}/bin/pip install doorstop python-frontmatter || { echo "Failed to install doorstop in venv"; exit 1; }
 	@echo "Virtual environment created and dependencies installed: ${VENV}"
 
-# Install dependencies
+# Install dependencies with fallback options
 .PHONY: install-deps
 install-deps: ${VENV}
-	${PIP} install doorstop python-frontmatter
+	@echo "Installing dependencies..."
+	@${PIP} install doorstop python-frontmatter || { echo "Failed to install in venv, trying system install..."; pip3 install doorstop python-frontmatter; }
 	@echo "Dependencies installed"
 
 # Convert requirements from markdown to doorstop format
 .PHONY: convert-requirements
-convert-requirements: ${VENV}
-	${PYTHON_VENV} convert_to_doorstop.py
+convert-requirements: install-deps
+	@echo "Converting requirements to doorstop format..."
+	@${PYTHON_VENV} convert_to_doorstop.py || python3 convert_to_doorstop.py
 	@echo "Requirements converted to doorstop format"
 
 # Generate all doorstop outputs
 .PHONY: generate-all
-generate-all: ${VENV} create-dirs export-all publish-all validate-all generate-reports
+generate-all: install-deps create-dirs export-all publish-all validate-all generate-reports
 	@echo "All doorstop outputs generated"
 
 # Create output directories
@@ -62,70 +72,92 @@ create-dirs:
 	mkdir -p ${PUBLISH_DIR}
 	mkdir -p ${REPORTS_DIR}
 
-# Export all documents to YAML format
+# Export all documents to YAML format with fallback
 .PHONY: export-all
-export-all: ${VENV} create-dirs
+export-all: install-deps create-dirs
 	@echo "Exporting all documents to YAML format..."
 	@for doc in ${DOCUMENTS}; do \
 		echo "Exporting $$doc..."; \
-		${DOORSTOP} export $$doc > ${EXPORT_DIR}/$$doc.yaml; \
+		if [ -f "${DOORSTOP}" ]; then \
+			${DOORSTOP} export $$doc > ${EXPORT_DIR}/$$doc.yaml; \
+		elif command -v python3 >/dev/null 2>&1 && python3 -c "import doorstop" 2>/dev/null; then \
+			${DOORSTOP_FALLBACK} export $$doc > ${EXPORT_DIR}/$$doc.yaml; \
+		else \
+			${DOORSTOP_SCRIPT} export $$doc > ${EXPORT_DIR}/$$doc.yaml; \
+		fi; \
 	done
 	@echo "All documents exported to ${EXPORT_DIR}/"
 
 # Publish all documents to various formats
 .PHONY: publish-all
-publish-all: ${VENV} publish-html publish-markdown publish-pdf
+publish-all: install-deps publish-html publish-markdown publish-pdf
 	@echo "All documents published"
 
-# Publish to HTML format
+# Publish to HTML format with fallback
 .PHONY: publish-html
-publish-html: ${VENV} create-dirs
+publish-html: install-deps create-dirs
 	@echo "Publishing documents to HTML format..."
 	@echo "WARNING: HTML publishing may hang due to PlantUML extension. Use publish-markdown for reliable output."
 	@mkdir -p ${PUBLISH_DIR}/html
 	@for doc in ${DOCUMENTS}; do \
 		echo "Publishing $$doc to HTML..."; \
-		${DOORSTOP} publish $$doc ${PUBLISH_DIR}/html/$$doc.html --html; \
+		if [ -f "${DOORSTOP}" ]; then \
+			${DOORSTOP} publish $$doc ${PUBLISH_DIR}/html/$$doc.html --html; \
+		else \
+			${DOORSTOP_FALLBACK} publish $$doc ${PUBLISH_DIR}/html/$$doc.html --html; \
+		fi; \
 	done
 	@echo "HTML publishing completed"
 
-# Publish to Markdown format
+# Publish to Markdown format with fallback
 .PHONY: publish-markdown
-publish-markdown: ${VENV} create-dirs
+publish-markdown: install-deps create-dirs
 	@echo "Publishing documents to Markdown format..."
 	@mkdir -p ${PUBLISH_DIR}/markdown
 	@for doc in ${DOCUMENTS}; do \
 		echo "Publishing $$doc to Markdown..."; \
-		${DOORSTOP} publish $$doc ${PUBLISH_DIR}/markdown/$$doc.md --markdown; \
+		if [ -f "${DOORSTOP}" ]; then \
+			${DOORSTOP} publish $$doc ${PUBLISH_DIR}/markdown/$$doc.md --markdown; \
+		else \
+			${DOORSTOP_FALLBACK} publish $$doc ${PUBLISH_DIR}/markdown/$$doc.md --markdown; \
+		fi; \
 	done
 	@echo "Markdown publishing completed"
 
-# Publish to PDF format (via LaTeX)
+# Publish to PDF format (via LaTeX) with fallback
 .PHONY: publish-pdf
-publish-pdf: ${VENV} create-dirs
+publish-pdf: install-deps create-dirs
 	@echo "Publishing documents to LaTeX (PDF) format..."
 	@for doc in ${DOCUMENTS}; do \
 		echo "Publishing $$doc to LaTeX..."; \
 		mkdir -p ${PUBLISH_DIR}/latex; \
-		${DOORSTOP} publish $$doc ${PUBLISH_DIR}/latex/$$doc.tex --latex; \
+		if [ -f "${DOORSTOP}" ]; then \
+			${DOORSTOP} publish $$doc ${PUBLISH_DIR}/latex/$$doc.tex --latex; \
+		else \
+			${DOORSTOP_FALLBACK} publish $$doc ${PUBLISH_DIR}/latex/$$doc.tex --latex; \
+		fi; \
 	done
 	@echo "LaTeX publications complete (convert .tex to PDF manually if needed)"
 
-# Validate all documents
+# Validate all documents with fallback
 .PHONY: validate-all
-validate-all: ${VENV}
+validate-all: install-deps
 	@echo "Validating all documents..."
-	@${DOORSTOP} --verbose --warn-all
+	@if [ -f "${DOORSTOP}" ]; then \
+		${DOORSTOP} --verbose --warn-all; \
+	else \
+		${DOORSTOP_FALLBACK} --verbose --warn-all; \
+	fi
 	@echo "Document validation complete"
 
 # Generate comprehensive reports
 .PHONY: generate-reports
-generate-reports: ${VENV} generate-requirements-report generate-traceability-report generate-coverage-report
+generate-reports: install-deps generate-requirements-report generate-traceability-report generate-coverage-report
 	@echo "All reports generated"
 
 # Generate requirements summary report
 .PHONY: generate-requirements-report
-generate-requirements-report: ${VENV} create-dirs
+generate-requirements-report: install-deps create-dirs
 	@echo "Generating requirements summary report..."
 	@echo "# MIL-STD-498 Requirements Summary Report" > ${REPORTS_DIR}/requirements_summary.md
 	@echo "Generated: $$(date)" >> ${REPORTS_DIR}/requirements_summary.md
@@ -142,7 +174,7 @@ generate-requirements-report: ${VENV} create-dirs
 
 # Generate traceability matrix report
 .PHONY: generate-traceability-report
-generate-traceability-report: ${VENV} create-dirs
+generate-traceability-report: install-deps create-dirs
 	@echo "Generating traceability matrix report..."
 	@echo "# MIL-STD-498 Traceability Matrix Report" > ${REPORTS_DIR}/traceability_matrix.md
 	@echo "Generated: $$(date)" >> ${REPORTS_DIR}/traceability_matrix.md
@@ -163,7 +195,7 @@ generate-traceability-report: ${VENV} create-dirs
 
 # Generate coverage report
 .PHONY: generate-coverage-report
-generate-coverage-report: ${VENV} create-dirs
+generate-coverage-report: install-deps create-dirs
 	@echo "Generating coverage report..."
 	@echo "# MIL-STD-498 Coverage Report" > ${REPORTS_DIR}/coverage_report.md
 	@echo "Generated: $$(date)" >> ${REPORTS_DIR}/coverage_report.md
@@ -193,7 +225,7 @@ generate-coverage-report: ${VENV} create-dirs
 
 # Generate combined master report
 .PHONY: generate-master-report
-generate-master-report: ${VENV} create-dirs
+generate-master-report: install-deps create-dirs
 	@echo "Generating master report..."
 	@echo "# MIL-STD-498 Master Report" > ${REPORTS_DIR}/master_report.md
 	@echo "Generated: $$(date)" >> ${REPORTS_DIR}/master_report.md
@@ -266,12 +298,12 @@ help:
 
 # Quick setup target
 .PHONY: quick-setup
-quick-setup: ${VENV} install-deps convert-requirements
+quick-setup: install-deps convert-requirements
 	@echo "Quick setup complete - ready for doorstop operations"
 
 # Development target for testing
 .PHONY: dev
-dev: ${VENV} install-deps
+dev: install-deps
 	@echo "Development environment ready"
 	@echo "Run 'make convert-requirements' to convert requirements"
 	@echo "Run 'make generate-all' to generate all outputs" 

@@ -1,0 +1,60 @@
+name: Doorstop MIL-STD-498 Documentation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y python3-pip python3-venv
+    
+    - name: Install Python dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        python3 -m pip install doorstop python-frontmatter
+    
+    - name: Convert requirements
+      run: make convert-requirements
+    
+    - name: Export documents
+      run: make export-all
+    
+    - name: Generate reports
+      run: make generate-reports
+    
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: doorstop-outputs
+        path: |
+          exports/
+          reports/
+          publications/
+    
+    - name: Create summary
+      run: |
+        echo "## Doorstop Documentation Generation Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "- **Documents processed**: $(ls exports/*.yaml | wc -l)" >> $GITHUB_STEP_SUMMARY
+        echo "- **Requirements converted**: $(find mil-std-498-doorstop -name "*.md" | wc -l)" >> $GITHUB_STEP_SUMMARY
+        echo "- **Reports generated**: $(ls reports/*.md | wc -l)" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Generated Files:" >> $GITHUB_STEP_SUMMARY
+        echo "- YAML exports: \`exports/\`" >> $GITHUB_STEP_SUMMARY
+        echo "- Reports: \`reports/\`" >> $GITHUB_STEP_SUMMARY
+        echo "- Publications: \`publications/\`" >> $GITHUB_STEP_SUMMARY 
