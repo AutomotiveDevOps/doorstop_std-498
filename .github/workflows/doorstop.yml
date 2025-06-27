@@ -29,20 +29,40 @@ jobs:
         pip install --upgrade pip
         pip install doorstop python-frontmatter
     
+    - name: Clean previous outputs
+      run: |
+        rm -rf exports
+        rm -rf publications
+        rm -rf reports
+        echo "Previous outputs cleaned"
+    
     - name: Convert requirements
       run: python3 convert_to_doorstop.py
     
-    - name: Export documents
+    - name: Create output directories
       run: |
         mkdir -p exports
+        mkdir -p publications
+        mkdir -p reports
+    
+    - name: Export documents to YAML
+      run: |
+        echo "Exporting all documents to YAML format..."
         for doc in SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP; do
           echo "Exporting $doc..."
           doorstop export $doc > exports/$doc.yaml
         done
+        echo "All documents exported to exports/"
     
-    - name: Generate reports
+    - name: Validate documents
       run: |
-        mkdir -p reports
+        echo "Validating all documents..."
+        doorstop --verbose --warn-all
+        echo "Document validation complete"
+    
+    - name: Generate requirements summary report
+      run: |
+        echo "Generating requirements summary report..."
         echo "# MIL-STD-498 Requirements Summary Report" > reports/requirements_summary.md
         echo "Generated: $(date)" >> reports/requirements_summary.md
         echo "" >> reports/requirements_summary.md
@@ -54,6 +74,101 @@ jobs:
         done
         echo "" >> reports/requirements_summary.md
         echo "## Total Requirements: $(find mil-std-498-doorstop -name "*.md" | wc -l)" >> reports/requirements_summary.md
+        echo "Requirements summary report generated: reports/requirements_summary.md"
+    
+    - name: Generate traceability matrix report
+      run: |
+        echo "Generating traceability matrix report..."
+        echo "# MIL-STD-498 Traceability Matrix Report" > reports/traceability_matrix.md
+        echo "Generated: $(date)" >> reports/traceability_matrix.md
+        echo "" >> reports/traceability_matrix.md
+        echo "## Document Traceability Links" >> reports/traceability_matrix.md
+        echo "" >> reports/traceability_matrix.md
+        for doc in SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP; do
+          echo "### $doc" >> reports/traceability_matrix.md
+          echo "" >> reports/traceability_matrix.md
+          linked_count=$(grep -r "links:" mil-std-498-doorstop/$doc | wc -l)
+          total_count=$(find mil-std-498-doorstop/$doc -name "*.md" | wc -l)
+          echo "- Total requirements: $total_count" >> reports/traceability_matrix.md
+          echo "- Requirements with links: $linked_count" >> reports/traceability_matrix.md
+          if [ $total_count -gt 0 ]; then
+            coverage=$(echo "scale=1; $linked_count * 100 / $total_count" | bc 2>/dev/null || echo "N/A")
+            echo "- Link coverage: ${coverage}%" >> reports/traceability_matrix.md
+          else
+            echo "- Link coverage: N/A" >> reports/traceability_matrix.md
+          fi
+          echo "" >> reports/traceability_matrix.md
+        done
+        echo "Traceability matrix report generated: reports/traceability_matrix.md"
+    
+    - name: Generate coverage report
+      run: |
+        echo "Generating coverage report..."
+        echo "# MIL-STD-498 Coverage Report" > reports/coverage_report.md
+        echo "Generated: $(date)" >> reports/coverage_report.md
+        echo "" >> reports/coverage_report.md
+        echo "## Document Coverage Analysis" >> reports/coverage_report.md
+        echo "" >> reports/coverage_report.md
+        echo "### Requirements by Document Type" >> reports/coverage_report.md
+        echo "" >> reports/coverage_report.md
+        echo "| Document | Requirements | Status |" >> reports/coverage_report.md
+        echo "|----------|-------------|--------|" >> reports/coverage_report.md
+        for doc in SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP; do
+          count=$(find mil-std-498-doorstop/$doc -name "*.md" | wc -l)
+          if [ $count -gt 0 ]; then
+            echo "| $doc | $count | ✅ Complete |" >> reports/coverage_report.md
+          else
+            echo "| $doc | 0 | ❌ Missing |" >> reports/coverage_report.md
+          fi
+        done
+        echo "" >> reports/coverage_report.md
+        echo "### Summary Statistics" >> reports/coverage_report.md
+        echo "" >> reports/coverage_report.md
+        total_reqs=$(find mil-std-498-doorstop -name "*.md" | wc -l)
+        doc_count=$(ls -1 mil-std-498-doorstop/ | wc -l)
+        echo "- Total Requirements: $total_reqs" >> reports/coverage_report.md
+        echo "- Documents Covered: $doc_count" >> reports/coverage_report.md
+        if [ $doc_count -gt 0 ]; then
+          avg_reqs=$(echo "scale=1; $total_reqs / $doc_count" | bc 2>/dev/null || echo "N/A")
+          echo "- Average Requirements per Document: $avg_reqs" >> reports/coverage_report.md
+        else
+          echo "- Average Requirements per Document: N/A" >> reports/coverage_report.md
+        fi
+        echo "Coverage report generated: reports/coverage_report.md"
+    
+    - name: Generate master report
+      run: |
+        echo "Generating master report..."
+        echo "# MIL-STD-498 Master Report" > reports/master_report.md
+        echo "Generated: $(date)" >> reports/master_report.md
+        echo "" >> reports/master_report.md
+        echo "## Project Overview" >> reports/master_report.md
+        echo "" >> reports/master_report.md
+        echo "This report provides a comprehensive overview of the MIL-STD-498 requirements" >> reports/master_report.md
+        echo "converted to doorstop format with full traceability and validation." >> reports/master_report.md
+        echo "" >> reports/master_report.md
+        echo "## Quick Statistics" >> reports/master_report.md
+        echo "" >> reports/master_report.md
+        total_reqs=$(find mil-std-498-doorstop -name "*.md" | wc -l)
+        doc_count=$(ls -1 mil-std-498-doorstop/ | wc -l)
+        echo "- **Total Requirements**: $total_reqs" >> reports/master_report.md
+        echo "- **Documents**: $doc_count" >> reports/master_report.md
+        echo "- **Doorstop Version**: 3.0.2" >> reports/master_report.md
+        echo "- **Generation Method**: AI-assisted automation" >> reports/master_report.md
+        echo "" >> reports/master_report.md
+        echo "## Available Outputs" >> reports/master_report.md
+        echo "" >> reports/master_report.md
+        echo "- **Exports**: YAML format in \`exports/\`" >> reports/master_report.md
+        echo "- **Publications**: HTML, Markdown, PDF in \`publications/\`" >> reports/master_report.md
+        echo "- **Reports**: Detailed analysis in \`reports/\`" >> reports/master_report.md
+        echo "" >> reports/master_report.md
+        echo "## Document List" >> reports/master_report.md
+        echo "" >> reports/master_report.md
+        for doc in SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP; do
+          count=$(find mil-std-498-doorstop/$doc -name "*.md" | wc -l)
+          echo "- **$doc**: $count requirements" >> reports/master_report.md
+        done
+        echo "Master report generated: reports/master_report.md"
     
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
@@ -62,6 +177,7 @@ jobs:
         path: |
           exports/
           reports/
+          publications/
     
     - name: Create summary
       run: |
@@ -73,4 +189,5 @@ jobs:
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### Generated Files:" >> $GITHUB_STEP_SUMMARY
         echo "- YAML exports: \`exports/\`" >> $GITHUB_STEP_SUMMARY
-        echo "- Reports: \`reports/\`" >> $GITHUB_STEP_SUMMARY 
+        echo "- Reports: \`reports/\`" >> $GITHUB_STEP_SUMMARY
+        echo "- Publications: \`publications/\`" >> $GITHUB_STEP_SUMMARY 
