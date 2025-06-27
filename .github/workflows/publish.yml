@@ -61,20 +61,22 @@ jobs:
         python convert_to_doorstop.py
         
         # Export all documents using doorstop directly
+        cd mil-std-498-doorstop
         for doc in SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP; do
-          if [ -d "mil-std-498-doorstop/$doc" ]; then
+          if [ -d "$doc" ]; then
             echo "Exporting $doc..."
-            doorstop export $doc publications/markdown/$doc.yml
+            doorstop export $doc ../publications/markdown/$doc.yml
           fi
         done
         
         # Validate all documents
         for doc in SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP; do
-          if [ -d "mil-std-498-doorstop/$doc" ]; then
+          if [ -d "$doc" ]; then
             echo "Validating $doc..."
             doorstop validate $doc
           fi
         done
+        cd ..
         
         # Generate reports
         mkdir -p reports
