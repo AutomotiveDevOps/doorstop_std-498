@@ -1,20 +1,15 @@
-/**
- * This code written by Claude Sonnet 4 (claude-3-5-sonnet-20241022)
- * Generated via Cursor IDE (cursor.sh) with AI assistance
- * Model: Anthropic Claude 3.5 Sonnet
- * Generation timestamp: 2024-06-26
- * Context: Doorstop item for SCOM-001: Document Identification
- * 
- * Technical details:
- * - LLM: Claude 3.5 Sonnet (2024-10-22)
- * - IDE: Cursor (cursor.sh)
- * - Generation method: AI-assisted pair programming
- * - Code style: Markdown for Doorstop item
- * - Dependencies: Doorstop 3.0.2
- */
 ---
+active: true
+derived: false
+level: 1.0
+links: []
+normative: true
+ref: ''
+reviewed: s9CGK0Isw8Telj7I9miiHsrmUfGynnNzMHC0Egdfjak=
+title: Document Identification
 uid: SCOM-001
-title: Document Identification---
+---
+
 The document **shall** be identified by the following information:
 **Document Name**: [Document Name]
 **Document Identifier**: [SCOM-001]

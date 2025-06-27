@@ -1,0 +1,132 @@
+building tree...
+CPM-001:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The manual **shall** be identified by the following information:
+    **Manual Name**: [Manual Name]
+    **Manual Identifier**: [CPM-001]
+    **Version**: 1.0
+    **Classification**: [Unclassified/Classified Level]
+
+    ### 1.2 Manual Overview
+  title: Manual Identification
+  uid: CPM-001
+
+CPM-002:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The manual **shall** provide programming guidelines and standards
+    The manual **shall** describe coding conventions and practices
+    The manual **shall** cover development tools and environments
+
+    ## 2. Referenced Documents
+  title: Manual Purpose
+  uid: CPM-002
+
+CPM-003:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    MIL-STD-498: Software Development and Documentation
+    [Other applicable standards]
+
+    ## 3. Programming Standards
+
+    ### 3.1 Coding Conventions
+  title: Referenced Standards
+  uid: CPM-003
+
+CPM-004:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The manual **shall** define naming conventions
+    The manual **shall** specify code formatting rules
+    The manual **shall** describe comment standards
+
+    ### 3.2 Programming Practices
+  title: Code Style
+  uid: CPM-004
+
+CPM-005:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The manual **shall** describe secure coding practices
+    The manual **shall** include error handling guidelines
+    The manual **shall** provide performance optimization tips
+
+    ## 4. Development Environment
+  title: Best Practices
+  uid: CPM-005
+
+CPM-006:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The manual **shall** describe required development tools
+    The manual **shall** specify IDE configuration
+    The manual **shall** include build system setup
+
+    ## 5. Testing Guidelines
+  title: Tools and Environment
+  uid: CPM-006
+
+CPM-007:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The manual **shall** describe unit testing requirements
+    The manual **shall** include integration testing procedures
+    The manual **shall** provide code review guidelines
+
+    ## 6. Notes
+    **CPM**: Computer Programming Manual
+    **IDE**: Integrated Development Environment
+  title: Testing Standards
+  uid: CPM-007
+

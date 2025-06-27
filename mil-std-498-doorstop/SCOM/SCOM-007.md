@@ -1,20 +1,15 @@
-/**
- * This code written by Claude Sonnet 4 (claude-3-5-sonnet-20241022)
- * Generated via Cursor IDE (cursor.sh) with AI assistance
- * Model: Anthropic Claude 3.5 Sonnet
- * Generation timestamp: 2024-06-26
- * Context: Doorstop item for SCOM-007: Status Tracking
- * 
- * Technical details:
- * - LLM: Claude 3.5 Sonnet (2024-10-22)
- * - IDE: Cursor (cursor.sh)
- * - Generation method: AI-assisted pair programming
- * - Code style: Markdown for Doorstop item
- * - Dependencies: Doorstop 3.0.2
- */
 ---
+active: true
+derived: false
+level: 1.0
+links: []
+normative: true
+ref: ''
+reviewed: dLv3nq9_klYDwtxEAO8T8t0pByvbsqWZ1v9cUraXpso=
+title: Status Tracking
 uid: SCOM-007
-title: Status Tracking---
+---
+
 The document **shall** describe configuration status tracking methods
 The document **shall** specify status reporting requirements
 The document **shall** define configuration audit procedures

@@ -1,0 +1,148 @@
+building tree...
+FSM-001:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The manual **shall** be identified by the following information:
+    **Manual Name**: [Manual Name]
+    **Manual Identifier**: [FSM-001]
+    **Version**: 1.0
+    **Classification**: [Unclassified/Classified Level]
+
+    ### 1.2 Manual Overview
+  title: Manual Identification
+  uid: FSM-001
+
+FSM-002:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The manual **shall** provide firmware support and maintenance procedures
+    The manual **shall** describe firmware update and recovery processes
+    The manual **shall** cover hardware-firmware interface specifications
+
+    ## 2. Referenced Documents
+  title: Manual Purpose
+  uid: FSM-002
+
+FSM-003:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    MIL-STD-498: Software Development and Documentation
+    [Other applicable standards]
+
+    ## 3. Firmware Overview
+  title: Referenced Standards
+  uid: FSM-003
+
+FSM-004:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The manual **shall** describe the firmware architecture
+    The manual **shall** specify firmware version and features
+    The manual **shall** provide hardware compatibility information
+
+    ## 4. Firmware Installation
+  title: System Description
+  uid: FSM-004
+
+FSM-005:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The manual **shall** provide firmware installation instructions
+    The manual **shall** describe pre-installation requirements
+    The manual **shall** include installation verification procedures
+
+    ## 5. Firmware Updates
+  title: Installation Procedures
+  uid: FSM-005
+
+FSM-006:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The manual **shall** describe firmware update procedures
+    The manual **shall** include rollback procedures
+    The manual **shall** provide update verification methods
+
+    ## 6. Troubleshooting
+  title: Update Procedures
+  uid: FSM-006
+
+FSM-007:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The manual **shall** provide firmware troubleshooting procedures
+    The manual **shall** include diagnostic tools and methods
+    The manual **shall** describe recovery procedures
+
+    ## 7. Hardware Interface
+  title: Problem Resolution
+  uid: FSM-007
+
+FSM-008:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The manual **shall** describe hardware-firmware interfaces
+    The manual **shall** specify communication protocols
+    The manual **shall** provide interface configuration procedures
+
+    ## 8. Notes
+    **FSM**: Firmware Support Manual
+    **Firmware**: Software embedded in hardware devices
+  title: Interface Specifications
+  uid: FSM-008
+

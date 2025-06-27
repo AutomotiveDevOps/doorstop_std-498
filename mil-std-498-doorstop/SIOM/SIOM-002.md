@@ -1,20 +1,15 @@
-/**
- * This code written by Claude Sonnet 4 (claude-3-5-sonnet-20241022)
- * Generated via Cursor IDE (cursor.sh) with AI assistance
- * Model: Anthropic Claude 3.5 Sonnet
- * Generation timestamp: 2024-06-26
- * Context: Doorstop item for SIOM-002: Manual Purpose
- * 
- * Technical details:
- * - LLM: Claude 3.5 Sonnet (2024-10-22)
- * - IDE: Cursor (cursor.sh)
- * - Generation method: AI-assisted pair programming
- * - Code style: Markdown for Doorstop item
- * - Dependencies: Doorstop 3.0.2
- */
 ---
+active: true
+derived: false
+level: 1.0
+links: []
+normative: true
+ref: ''
+reviewed: 7fgc7xaT4lN1guB2QdLHogVygPlc_iYuDcERL9O75Oc=
+title: Manual Purpose
 uid: SIOM-002
-title: Manual Purpose---
+---
+
 The manual **shall** provide software installation procedures
 The manual **shall** describe software operation and usage
 The manual **shall** cover maintenance and troubleshooting procedures

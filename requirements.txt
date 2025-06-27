@@ -1,0 +1,5 @@
+# Python dependencies for MIL-STD-498 Doorstop project
+# Generated via Cursor IDE with AI assistance
+
+doorstop>=3.0.2
+python-frontmatter>=1.1.0 

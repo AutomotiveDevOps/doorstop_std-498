@@ -1,0 +1,749 @@
+building tree...
+SDD-001:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The software **shall** be identified by the following information:
+    **Software Name**: [Software Name]
+    **Software Identifier**: [SW-001]
+    **Version**: 1.0
+    **Release**: Initial Release
+    **Classification**: [Unclassified/Classified Level]
+
+    ### 1.2 Software Overview
+  title: Software Identification
+  uid: SDD-001
+
+SDD-002:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The software **shall** provide [primary software functionality]
+    The software **shall** support [key operational capabilities]
+    The software **shall** integrate with [existing systems or infrastructure]
+  title: Software Purpose
+  uid: SDD-002
+
+SDD-003:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The software **shall** be part of the [system name] system
+    The software **shall** interface with [other software components]
+    The software **shall** run on [specified hardware platform]
+
+    ### 1.3 Document Overview
+  title: Software Context
+  uid: SDD-003
+
+SDD-004:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    This document **shall** describe the software design for [software name]
+    This document **shall** serve as the basis for software implementation
+    This document **shall** support software testing and maintenance
+
+    ## 2. Referenced Documents
+
+    ### 2.1 Government Documents
+  title: Document Purpose
+  uid: SDD-004
+
+SDD-005:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    MIL-STD-498: Software Development and Documentation
+    MIL-STD-961E: Defense and Program-Unique Specifications Format and Content
+
+    ### 2.2 Project Documents
+  title: Military Standards
+  uid: SDD-005
+
+SDD-006:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    Software Requirements Specification (SRS)
+    System/Subsystem Specification (SSS)
+    Interface Requirements Specification (IRS)
+
+    ## 3. Design Overview
+
+    ### 3.1 Design Philosophy
+  title: Requirements Documents
+  uid: SDD-006
+
+SDD-007:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The software **shall** follow object-oriented design principles
+    The software **shall** implement separation of concerns
+    The software **shall** use design patterns where appropriate
+    The software **shall** support modularity and reusability
+  title: Design Principles
+  uid: SDD-007
+
+SDD-008:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The software **shall** use microservices architecture
+    The software **shall** implement RESTful API design
+    The software **shall** support containerization
+    The software **shall** enable horizontal scaling
+
+    ### 3.2 Design Constraints
+  title: Architecture Approach
+  uid: SDD-008
+
+SDD-009:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The software **shall** be developed using [specified programming language]
+    The software **shall** use [specified framework]
+    The software **shall** run on [specified operating system]
+    The software **shall** use [specified database system]
+  title: Technology Constraints
+  uid: SDD-009
+
+SDD-010:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The software **shall** respond to requests within 3 seconds
+    The software **shall** support 1000 concurrent users
+    The software **shall** use no more than 80% of available resources
+    The software **shall** maintain performance under load
+
+    ### 3.3 Design Methods and Tools
+  title: Performance Constraints
+  uid: SDD-010
+
+SDD-011:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The software **shall** use UML for design modeling
+    The software **shall** implement test-driven development
+    The software **shall** use continuous integration practices
+    The software **shall** follow agile development methodology
+  title: Design Methods
+  uid: SDD-011
+
+SDD-012:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The software **shall** use [specified IDE] for development
+    The software **shall** use [specified version control system]
+    The software **shall** use [specified build tools]
+    The software **shall** use [specified testing frameworks]
+
+    ## 4. System Architecture
+
+    ### 4.1 System Overview
+  title: Design Tools
+  uid: SDD-012
+
+SDD-013:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The system **shall** consist of the following major components:
+    **Web Layer**: User interface and presentation logic
+    **Application Layer**: Business logic and application services
+    **Data Layer**: Data access and persistence
+    **Integration Layer**: External system integration
+  title: System Architecture
+  uid: SDD-013
+
+SDD-014:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The components **shall** communicate through well-defined interfaces
+    The components **shall** be loosely coupled
+    The components **shall** support independent deployment
+    The components **shall** enable horizontal scaling
+
+    ### 4.2 System Context
+  title: Component Relationships
+  uid: SDD-014
+
+SDD-015:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The system **shall** depend on [external systems]
+    The system **shall** integrate with [third-party services]
+    The system **shall** use [external databases]
+    The system **shall** communicate via [network protocols]
+  title: External Dependencies
+  uid: SDD-015
+
+SDD-016:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The system **shall** have clear boundaries with external systems
+    The system **shall** implement security controls at boundaries
+    The system **shall** provide monitoring and logging at boundaries
+    The system **shall** support boundary testing
+
+    ## 5. Detailed Design
+
+    ### 5.1 Module Design
+
+    #### 5.1.1 User Management Module
+  title: System Boundaries
+  uid: SDD-016
+
+SDD-017:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    **Module ID**: AUTH-001
+    **Purpose**: Handle user authentication and authorization
+    **Responsibilities**:
+    User login and logout
+    Password management
+    Session management
+    Access control enforcement
+  title: User Authentication Module
+  uid: SDD-017
+
+SDD-018:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    **Module ID**: PROFILE-001
+    **Purpose**: Manage user profile information
+    **Responsibilities**:
+    Profile creation and updates
+    Preference management
+    Account settings
+    User preferences
+
+    #### 5.1.2 Data Management Module
+  title: User Profile Module
+  uid: SDD-018
+
+SDD-019:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    **Module ID**: DATA-001
+    **Purpose**: Handle data access and persistence
+    **Responsibilities**:
+    Database operations
+    Data validation
+    Transaction management
+    Data caching
+  title: Data Access Module
+  uid: SDD-019
+
+SDD-020:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    **Module ID**: PROCESS-001
+    **Purpose**: Process and transform data
+    **Responsibilities**:
+    Business logic implementation
+    Data calculations
+    Data transformation
+    Business rule enforcement
+
+    #### 5.1.3 Communication Module
+  title: Data Processing Module
+  uid: SDD-020
+
+SDD-021:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    **Module ID**: API-001
+    **Purpose**: Provide RESTful API services
+    **Responsibilities**:
+    API endpoint management
+    Request/response handling
+    API documentation
+    API versioning
+  title: API Module
+  uid: SDD-021
+
+SDD-022:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    **Module ID**: INTEGRATION-001
+    **Purpose**: Handle external system integration
+    **Responsibilities**:
+    External API communication
+    Data synchronization
+    Error handling
+    Retry mechanisms
+
+    ### 5.2 Interface Design
+
+    #### 5.2.1 User Interface Design
+  title: Integration Module
+  uid: SDD-022
+
+SDD-023:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    **Interface ID**: WEB-UI-001
+    **Design Approach**: Responsive web design
+    **Technology Stack**: HTML5, CSS3, JavaScript, React
+    **Design Principles**:
+    Mobile-first design
+    Accessibility compliance
+    User experience optimization
+    Performance optimization
+  title: Web Interface Design
+  uid: SDD-023
+
+SDD-024:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    **Interface ID**: MOBILE-UI-001
+    **Design Approach**: Progressive Web App (PWA)
+    **Technology Stack**: HTML5, CSS3, JavaScript, Service Workers
+    **Design Principles**:
+    Touch-friendly interface
+    Offline capability
+    Fast loading times
+    Native app-like experience
+
+    #### 5.2.2 API Interface Design
+  title: Mobile Interface Design
+  uid: SDD-024
+
+SDD-025:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    **Interface ID**: REST-API-001
+    **Design Approach**: RESTful API design
+    **Technology Stack**: JSON, HTTP/HTTPS, JWT
+    **Design Principles**:
+    Resource-based URLs
+    HTTP method semantics
+    Stateless operations
+    Standard HTTP status codes
+  title: REST API Design
+  uid: SDD-025
+
+SDD-026:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    **Interface ID**: DB-API-001
+    **Design Approach**: Data access layer abstraction
+    **Technology Stack**: SQL, ORM, Connection Pooling
+    **Design Principles**:
+    Connection pooling
+    Transaction management
+    Query optimization
+    Data validation
+
+    ### 5.3 Data Design
+
+    #### 5.3.1 Database Design
+  title: Database Interface Design
+  uid: SDD-026
+
+SDD-027:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    **Database Type**: [Relational/NoSQL] database
+    **Schema Design**: Normalized database schema
+    **Key Features**:
+    Primary and foreign key relationships
+    Indexing strategy
+    Data constraints
+    Referential integrity
+  title: Database Schema
+  uid: SDD-027
+
+SDD-028:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    **User Model**: User account and profile information
+    **Data Model**: Core business data entities
+    **Audit Model**: System audit and logging data
+    **Configuration Model**: System configuration data
+
+    #### 5.3.2 Data Flow Design
+  title: Data Models
+  uid: SDD-028
+
+SDD-029:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    **Input Data Flow**: User input and external data sources
+    **Processing Data Flow**: Business logic and data transformation
+    **Output Data Flow**: Reports, notifications, and external systems
+    **Storage Data Flow**: Database operations and caching
+  title: Data Flow Architecture
+  uid: SDD-029
+
+SDD-030:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    **Encryption**: Data encryption at rest and in transit
+    **Access Control**: Role-based data access control
+    **Audit Trail**: Comprehensive data access logging
+    **Data Backup**: Automated backup and recovery procedures
+
+    ## 6. Human-Machine Interface Design
+
+    ### 6.1 User Interface Design
+  title: Data Security Design
+  uid: SDD-030
+
+SDD-031:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The interface **shall** use a consistent layout design
+    The interface **shall** provide intuitive navigation
+    The interface **shall** support responsive design
+    The interface **shall** comply with accessibility standards
+  title: Interface Layout
+  uid: SDD-031
+
+SDD-032:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The interface **shall** provide clear visual hierarchy
+    The interface **shall** use consistent color schemes
+    The interface **shall** provide helpful error messages
+    The interface **shall** support user customization
+
+    ### 6.2 User Interaction Design
+  title: User Experience Design
+  uid: SDD-032
+
+SDD-033:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The interface **shall** use standard interaction patterns
+    The interface **shall** provide immediate feedback
+    The interface **shall** support keyboard navigation
+    The interface **shall** implement progressive disclosure
+  title: Interaction Patterns
+  uid: SDD-033
+
+SDD-034:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The interface **shall** comply with WCAG 2.1 AA standards
+    The interface **shall** support screen readers
+    The interface **shall** provide keyboard alternatives
+    The interface **shall** use sufficient color contrast
+
+    ## 7. Requirements Traceability
+
+    ### 7.1 Design to Requirements Traceability
+  title: Accessibility Design
+  uid: SDD-034
+
+SDD-035:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    Each functional requirement **shall** be traced to design components
+    Design components **shall** implement specific requirements
+    Requirements **shall** be validated through design review
+    Design changes **shall** be tracked against requirements
+  title: Functional Requirements Traceability
+  uid: SDD-035
+
+SDD-036:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    Performance requirements **shall** be addressed in design
+    Security requirements **shall** be implemented in design
+    Reliability requirements **shall** be considered in design
+    Maintainability requirements **shall** be supported by design
+
+    ### 7.2 Design Verification
+  title: Non-Functional Requirements Traceability
+  uid: SDD-036
+
+SDD-037:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    Design **shall** be reviewed by technical stakeholders
+    Design **shall** be validated against requirements
+    Design **shall** be assessed for feasibility
+    Design **shall** be approved before implementation
+
+    ## 8. Notes
+
+    ### 8.1 Acronyms and Abbreviations
+    **SDD**: Software Design Document
+    **API**: Application Programming Interface
+    **CSS**: Cascading Style Sheets
+    **HTML**: HyperText Markup Language
+    **JSON**: JavaScript Object Notation
+    **JWT**: JSON Web Token
+    **ORM**: Object-Relational Mapping
+    **PWA**: Progressive Web App
+    **REST**: Representational State Transfer
+    **SQL**: Structured Query Language
+    **UML**: Unified Modeling Language
+    **WCAG**: Web Content Accessibility Guidelines
+
+    ### 8.2 Definitions
+    **Module**: A self-contained component of the software
+    **Interface**: A boundary between software components
+    **Architecture**: The overall structure of the software system
+    **Design Pattern**: A reusable solution to common design problems
+    **Component**: A modular part of the software system
+
+    ### 8.3 Background Information
+
+    This Software Design Document follows MIL-STD-498 guidelines and provides a comprehensive framework for software design. The design is structured to support implementation, testing, and maintenance throughout the software lifecycle.
+  title: Design Review Process
+  uid: SDD-037
+

@@ -60,7 +60,12 @@ def extract_requirements_from_markdown(markdown_file: Path) -> List[Dict[str, st
         if next_match:
             end_pos = start_pos + next_match.start()
         else:
-            end_pos = len(content)
+            # Stop at traceability section if present
+            traceability_pos = content.find('## 4. Traceability')
+            if traceability_pos != -1 and traceability_pos > start_pos:
+                end_pos = traceability_pos
+            else:
+                end_pos = len(content)
         
         # Extract the requirement text
         requirement_text = content[start_pos:end_pos].strip()
@@ -166,7 +171,8 @@ title: {title}"""
         for link in parent_links:
             item_content += f"  - {link}\n"
     
-    item_content += f"""---
+    item_content += f"""
+---
 {text}
 """
     

@@ -1,20 +1,15 @@
-/**
- * This code written by Claude Sonnet 4 (claude-3-5-sonnet-20241022)
- * Generated via Cursor IDE (cursor.sh) with AI assistance
- * Model: Anthropic Claude 3.5 Sonnet
- * Generation timestamp: 2024-06-26
- * Context: Doorstop item for STRP-002: Document Purpose
- * 
- * Technical details:
- * - LLM: Claude 3.5 Sonnet (2024-10-22)
- * - IDE: Cursor (cursor.sh)
- * - Generation method: AI-assisted pair programming
- * - Code style: Markdown for Doorstop item
- * - Dependencies: Doorstop 3.0.2
- */
 ---
+active: true
+derived: false
+level: 1.0
+links: []
+normative: true
+ref: ''
+reviewed: uuPr53k39ZvbguTdxXrs06VkeJae1ieEEeGK1wDckUI=
+title: Document Purpose
 uid: STRP-002
-title: Document Purpose---
+---
+
 The document **shall** define software transition strategy and procedures
 The document **shall** specify transition requirements and milestones
 The document **shall** describe transition testing and validation methods

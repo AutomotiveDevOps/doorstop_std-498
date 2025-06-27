@@ -1,0 +1,168 @@
+building tree...
+STR-001:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The document **shall** be identified by the following information:
+    **Document Name**: [Document Name]
+    **Document Identifier**: [STR-001]
+    **Version**: 1.0
+    **Classification**: [Unclassified/Classified Level]
+
+    ### 1.2 Document Overview
+  title: Document Identification
+  uid: STR-001
+
+STR-002:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The document **shall** provide a comprehensive report of software testing activities
+    The document **shall** describe test results and findings
+    The document **shall** include assessment of software quality and readiness
+
+    ## 2. Referenced Documents
+  title: Document Purpose
+  uid: STR-002
+
+STR-003:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    MIL-STD-498: Software Development and Documentation
+    [Other applicable standards]
+
+    ## 3. Test Results
+
+    ### 3.1 Overall Assessment
+  title: Referenced Standards
+  uid: STR-003
+
+STR-004:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The document **shall** provide an overall assessment of the software tested
+    The document **shall** identify any remaining deficiencies, limitations, or constraints
+    The document **shall** describe the impact of any issues found
+
+    ### 3.2 Test Execution Results
+  title: Software Assessment
+  uid: STR-004
+
+STR-005:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The document **shall** summarize test execution results
+    The document **shall** provide pass/fail statistics
+    The document **shall** describe any test anomalies or deviations
+
+    ### 3.3 Defect Analysis
+  title: Test Results
+  uid: STR-005
+
+STR-006:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The document **shall** list all defects found during testing
+    The document **shall** categorize defects by severity and priority
+    The document **shall** provide defect resolution status
+
+    ## 4. Quality Assessment
+  title: Defect Reporting
+  uid: STR-006
+
+STR-007:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The document **shall** assess software quality against requirements
+    The document **shall** evaluate performance and reliability metrics
+    The document **shall** provide recommendations for improvement
+
+    ## 5. Test Environment
+  title: Quality Evaluation
+  uid: STR-007
+
+STR-008:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The document **shall** describe the test environment used
+    The document **shall** specify test tools and equipment
+    The document **shall** document any environmental issues encountered
+
+    ## 6. Conclusions and Recommendations
+  title: Environment Description
+  uid: STR-008
+
+STR-009:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: null
+  text: |
+    The document **shall** provide conclusions about software readiness
+    The document **shall** include recommendations for deployment
+    The document **shall** specify any follow-up actions required
+
+    ## 7. Notes
+    **STR**: Software Test Report
+    **Testing**: Software validation and verification activities
+  title: Final Assessment
+  uid: STR-009
+
