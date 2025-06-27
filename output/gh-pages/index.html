@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIL-STD-498 Documentation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .implementation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .implementation-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .implementation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .doorstop-card {
+            border-color: #3498db;
+        }
+        .strictdoc-card {
+            border-color: #e74c3c;
+        }
+        .implementation-card h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .doorstop-card h2 {
+            color: #3498db;
+        }
+        .strictdoc-card h2 {
+            color: #e74c3c;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .strictdoc-btn {
+            background-color: #e74c3c;
+        }
+        .strictdoc-btn:hover {
+            background-color: #c0392b;
+        }
+        .description {
+            margin: 15px 0;
+            color: #666;
+            font-size: 14px;
+        }
+        .features {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .features h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .features ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .features li {
+            padding: 5px 0;
+            color: #666;
+        }
+        .features li:before {
+            content: "✓ ";
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MIL-STD-498 Software Development and Documentation</h1>
+        
+        <div class="implementation-grid">
+            <div class="implementation-card doorstop-card">
+                <h2>Doorstop Implementation</h2>
+                <p class="description">
+                    Requirements management using Doorstop 3.0.2 with markdown-based requirements and full traceability.
+                </p>
+                <a href="doorstop/" class="btn">View Doorstop Documents</a>
+                
+                <div class="features">
+                    <h3>Features:</h3>
+                    <ul>
+                        <li>Markdown-based requirements</li>
+                        <li>Full traceability matrix</li>
+                        <li>Multiple export formats (HTML, PDF, LaTeX)</li>
+                        <li>Requirement validation</li>
+                        <li>Review tracking</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="implementation-card strictdoc-card">
+                <h2>StrictDoc Implementation</h2>
+                <p class="description">
+                    Requirements management using StrictDoc with structured document format and semantic markup.
+                </p>
+                <a href="strictdoc/" class="btn strictdoc-btn">View StrictDoc Documents</a>
+                
+                <div class="features">
+                    <h3>Features:</h3>
+                    <ul>
+                        <li>Structured document format</li>
+                        <li>Semantic requirements markup</li>
+                        <li>Cross-reference management</li>
+                        <li>HTML and PDF generation</li>
+                        <li>Requirement validation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Generated:</strong> <span id="generated-date"></span></p>
+            <p><strong>Total Documents:</strong> 23 MIL-STD-498 documents</p>
+            <p><strong>Implementation:</strong> AI-assisted automation with Claude 3.5 Sonnet</p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('generated-date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+    </script>
+</body>
+</html> 

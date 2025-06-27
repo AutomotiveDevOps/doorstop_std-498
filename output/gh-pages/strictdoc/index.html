@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIL-STD-498 StrictDoc Documents</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #e74c3c;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+        .back-link {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link a {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+        .placeholder {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #f8f9fa;
+            border: 2px dashed #e74c3c;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        .placeholder h2 {
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+        .placeholder p {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .btn:hover {
+            background-color: #c0392b;
+        }
+        .info-box {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        .info-box h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .info-box ul {
+            color: #666;
+            line-height: 1.8;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MIL-STD-498 StrictDoc Documents</h1>
+        
+        <div class="back-link">
+            <a href="../">← Back to Main Index</a>
+        </div>
+        
+        <div class="placeholder">
+            <h2>StrictDoc Documents Coming Soon</h2>
+            <p>
+                StrictDoc HTML documents are not yet generated. This section will contain 
+                the MIL-STD-498 documents converted to StrictDoc format with semantic markup.
+            </p>
+            <a href="../doorstop/" class="btn">View Doorstop Documents Instead</a>
+        </div>
+        
+        <div class="info-box">
+            <h3>About StrictDoc Implementation</h3>
+            <ul>
+                <li><strong>Format:</strong> Structured document format (.sdoc) with semantic markup</li>
+                <li><strong>Features:</strong> Cross-reference management, requirement validation, HTML/PDF generation</li>
+                <li><strong>Documents:</strong> 20 MIL-STD-498 documents in StrictDoc format</li>
+                <li><strong>Status:</strong> Source files ready, HTML generation pending</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h3>Available StrictDoc Source Files</h3>
+            <p>The following StrictDoc (.sdoc) files are available in the <code>mil-std-498-strictdoc/</code> directory:</p>
+            <ul>
+                <li>SRS.sdoc - Software Requirements Specification</li>
+                <li>SDD.sdoc - Software Design Description</li>
+                <li>SSS.sdoc - System/Subsystem Specification</li>
+                <li>SSDD.sdoc - System/Subsystem Design Description</li>
+                <li>IRS.sdoc - Interface Requirements Specification</li>
+                <li>IDD.sdoc - Interface Design Description</li>
+                <li>DBDD.sdoc - Database Design Description</li>
+                <li>SDP.sdoc - Software Development Plan</li>
+                <li>STP.sdoc - Software Test Plan</li>
+                <li>STD.sdoc - Software Test Description</li>
+                <li>STR.sdoc - Software Test Report</li>
+                <li>STRP.sdoc - Software Transition Plan</li>
+                <li>SPS.sdoc - Software Product Specification</li>
+                <li>SUM.sdoc - Software User Manual</li>
+                <li>SVD.sdoc - Software Version Description</li>
+                <li>CPM.sdoc - Computer Programming Manual</li>
+                <li>COM.sdoc - Computer Operations Manual</li>
+                <li>SCOM.sdoc - Software Configuration Management</li>
+                <li>SIOM.sdoc - Software Installation and Operations Manual</li>
+                <li>SIP.sdoc - Software Installation Plan</li>
+                <li>FSM.sdoc - Firmware Support Manual</li>
+                <li>OCD.sdoc - Operator Control Document</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Generated:</strong> <span id="generated-date"></span></p>
+            <p><strong>Tool:</strong> StrictDoc (pending HTML generation)</p>
+            <p><strong>Format:</strong> Structured document format (.sdoc)</p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('generated-date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+    </script>
+</body>
+</html> 
