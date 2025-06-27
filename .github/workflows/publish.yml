@@ -64,7 +64,7 @@ jobs:
         for doc in SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP; do
           if [ -d "mil-std-498-doorstop/$doc" ]; then
             echo "Exporting $doc..."
-            doorstop export mil-std-498-doorstop/$doc publications/markdown/$doc.yml
+            doorstop export $doc publications/markdown/$doc.yml
           fi
         done
         
@@ -72,7 +72,7 @@ jobs:
         for doc in SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP; do
           if [ -d "mil-std-498-doorstop/$doc" ]; then
             echo "Validating $doc..."
-            doorstop validate mil-std-498-doorstop/$doc
+            doorstop validate $doc
           fi
         done
         
