@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Development Team" />
+  <meta name="dcterms.date" content="2024-06-26" />
+  <title>Software Transition Plan (STRP)</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Software Transition Plan (STRP)</h1>
+<p class="author">Development Team</p>
+<p class="date">2024-06-26</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#software-transition-plan-strp"
+id="toc-software-transition-plan-strp">Software Transition Plan
+(STRP)</a>
+<ul>
+<li><a href="#scope" id="toc-scope">1. Scope</a>
+<ul>
+<li><a href="#identification" id="toc-identification">1.1
+Identification</a></li>
+<li><a href="#document-overview" id="toc-document-overview">1.2 Document
+Overview</a></li>
+</ul></li>
+<li><a href="#referenced-documents" id="toc-referenced-documents">2.
+Referenced Documents</a></li>
+<li><a href="#transition-overview" id="toc-transition-overview">3.
+Transition Overview</a></li>
+<li><a href="#transition-requirements"
+id="toc-transition-requirements">4. Transition Requirements</a>
+<ul>
+<li><a href="#system-requirements" id="toc-system-requirements">4.1
+System Requirements</a></li>
+<li><a href="#resource-requirements" id="toc-resource-requirements">4.2
+Resource Requirements</a></li>
+</ul></li>
+<li><a href="#transition-procedures" id="toc-transition-procedures">5.
+Transition Procedures</a>
+<ul>
+<li><a href="#pre-transition-activities"
+id="toc-pre-transition-activities">5.1 Pre-Transition
+Activities</a></li>
+<li><a href="#transition-process" id="toc-transition-process">5.2
+Transition Process</a></li>
+<li><a href="#post-transition-activities"
+id="toc-post-transition-activities">5.3 Post-Transition
+Activities</a></li>
+</ul></li>
+<li><a href="#transition-testing" id="toc-transition-testing">6.
+Transition Testing</a></li>
+<li><a href="#risk-management" id="toc-risk-management">7. Risk
+Management</a></li>
+<li><a href="#notes" id="toc-notes">8. Notes</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="software-transition-plan-strp">Software Transition Plan
+(STRP)</h1>
+<h2 id="scope">1. Scope</h2>
+<h3 id="identification">1.1 Identification</h3>
+<p><strong>STRP-001: Document Identification</strong> - The document
+<strong>shall</strong> be identified by the following information: -
+<strong>Document Name</strong>: [Document Name] - <strong>Document
+Identifier</strong>: [STRP-001] - <strong>Version</strong>: 1.0 -
+<strong>Classification</strong>: [Unclassified/Classified Level]</p>
+<h3 id="document-overview">1.2 Document Overview</h3>
+<p><strong>STRP-002: Document Purpose</strong> - The document
+<strong>shall</strong> define software transition strategy and
+procedures - The document <strong>shall</strong> specify transition
+requirements and milestones - The document <strong>shall</strong>
+describe transition testing and validation methods</p>
+<h2 id="referenced-documents">2. Referenced Documents</h2>
+<p><strong>STRP-003: Referenced Standards</strong> - MIL-STD-498:
+Software Development and Documentation - [Other applicable
+standards]</p>
+<h2 id="transition-overview">3. Transition Overview</h2>
+<p><strong>STRP-004: Transition Strategy</strong> - The document
+<strong>shall</strong> describe the overall transition approach - The
+document <strong>shall</strong> specify transition phases and milestones
+- The document <strong>shall</strong> define transition success
+criteria</p>
+<h2 id="transition-requirements">4. Transition Requirements</h2>
+<h3 id="system-requirements">4.1 System Requirements</h3>
+<p><strong>STRP-005: Transition Prerequisites</strong> - The document
+<strong>shall</strong> specify transition prerequisites and requirements
+- The document <strong>shall</strong> describe system readiness criteria
+- The document <strong>shall</strong> define transition environment
+requirements</p>
+<h3 id="resource-requirements">4.2 Resource Requirements</h3>
+<p><strong>STRP-006: Resource Planning</strong> - The document
+<strong>shall</strong> specify resource requirements for transition -
+The document <strong>shall</strong> describe personnel and training
+requirements - The document <strong>shall</strong> define infrastructure
+and support requirements</p>
+<h2 id="transition-procedures">5. Transition Procedures</h2>
+<h3 id="pre-transition-activities">5.1 Pre-Transition Activities</h3>
+<p><strong>STRP-007: Preparation Procedures</strong> - The document
+<strong>shall</strong> describe pre-transition preparation activities -
+The document <strong>shall</strong> specify readiness verification
+procedures - The document <strong>shall</strong> define backup and
+rollback procedures</p>
+<h3 id="transition-process">5.2 Transition Process</h3>
+<p><strong>STRP-008: Transition Steps</strong> - The document
+<strong>shall</strong> provide detailed transition procedures - The
+document <strong>shall</strong> specify data migration and conversion
+steps - The document <strong>shall</strong> describe system integration
+procedures</p>
+<h3 id="post-transition-activities">5.3 Post-Transition Activities</h3>
+<p><strong>STRP-009: Verification Procedures</strong> - The document
+<strong>shall</strong> describe post-transition verification procedures
+- The document <strong>shall</strong> specify testing and validation
+activities - The document <strong>shall</strong> define acceptance
+criteria</p>
+<h2 id="transition-testing">6. Transition Testing</h2>
+<p><strong>STRP-010: Testing Strategy</strong> - The document
+<strong>shall</strong> describe transition testing approach - The
+document <strong>shall</strong> specify test environments and scenarios
+- The document <strong>shall</strong> define testing success
+criteria</p>
+<h2 id="risk-management">7. Risk Management</h2>
+<p><strong>STRP-011: Risk Mitigation</strong> - The document
+<strong>shall</strong> identify transition risks and mitigation
+strategies - The document <strong>shall</strong> specify contingency
+procedures - The document <strong>shall</strong> define escalation
+procedures</p>
+<h2 id="notes">8. Notes</h2>
+<ul>
+<li><strong>STRP</strong>: Software Transition Plan</li>
+<li><strong>Transition</strong>: Software system transition and
+migration process</li>
+</ul>
+</body>
+</html>

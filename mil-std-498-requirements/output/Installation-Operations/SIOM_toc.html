@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Development Team" />
+  <meta name="dcterms.date" content="2024-06-26" />
+  <title>Software Installation and Operation Manual (SIOM)</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Software Installation and Operation Manual (SIOM)</h1>
+<p class="author">Development Team</p>
+<p class="date">2024-06-26</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#software-installation-and-operation-manual-siom"
+id="toc-software-installation-and-operation-manual-siom">Software
+Installation and Operation Manual (SIOM)</a>
+<ul>
+<li><a href="#scope" id="toc-scope">1. Scope</a>
+<ul>
+<li><a href="#identification" id="toc-identification">1.1
+Identification</a></li>
+<li><a href="#manual-overview" id="toc-manual-overview">1.2 Manual
+Overview</a></li>
+</ul></li>
+<li><a href="#referenced-documents" id="toc-referenced-documents">2.
+Referenced Documents</a></li>
+<li><a href="#system-overview" id="toc-system-overview">3. System
+Overview</a></li>
+<li><a href="#installation-procedures"
+id="toc-installation-procedures">4. Installation Procedures</a>
+<ul>
+<li><a href="#pre-installation-requirements"
+id="toc-pre-installation-requirements">4.1 Pre-Installation
+Requirements</a></li>
+<li><a href="#installation-process" id="toc-installation-process">4.2
+Installation Process</a></li>
+<li><a href="#post-installation-setup"
+id="toc-post-installation-setup">4.3 Post-Installation Setup</a></li>
+</ul></li>
+<li><a href="#operation-procedures" id="toc-operation-procedures">5.
+Operation Procedures</a>
+<ul>
+<li><a href="#system-startup" id="toc-system-startup">5.1 System
+Startup</a></li>
+<li><a href="#normal-operations" id="toc-normal-operations">5.2 Normal
+Operations</a></li>
+<li><a href="#system-shutdown" id="toc-system-shutdown">5.3 System
+Shutdown</a></li>
+</ul></li>
+<li><a href="#maintenance-procedures" id="toc-maintenance-procedures">6.
+Maintenance Procedures</a></li>
+<li><a href="#troubleshooting" id="toc-troubleshooting">7.
+Troubleshooting</a></li>
+<li><a href="#notes" id="toc-notes">8. Notes</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="software-installation-and-operation-manual-siom">Software
+Installation and Operation Manual (SIOM)</h1>
+<h2 id="scope">1. Scope</h2>
+<h3 id="identification">1.1 Identification</h3>
+<p><strong>SIOM-001: Manual Identification</strong> - The manual
+<strong>shall</strong> be identified by the following information: -
+<strong>Manual Name</strong>: [Manual Name] - <strong>Manual
+Identifier</strong>: [SIOM-001] - <strong>Version</strong>: 1.0 -
+<strong>Classification</strong>: [Unclassified/Classified Level]</p>
+<h3 id="manual-overview">1.2 Manual Overview</h3>
+<p><strong>SIOM-002: Manual Purpose</strong> - The manual
+<strong>shall</strong> provide software installation procedures - The
+manual <strong>shall</strong> describe software operation and usage -
+The manual <strong>shall</strong> cover maintenance and troubleshooting
+procedures</p>
+<h2 id="referenced-documents">2. Referenced Documents</h2>
+<p><strong>SIOM-003: Referenced Standards</strong> - MIL-STD-498:
+Software Development and Documentation - [Other applicable
+standards]</p>
+<h2 id="system-overview">3. System Overview</h2>
+<p><strong>SIOM-004: Software Description</strong> - The manual
+<strong>shall</strong> describe the software system and its components -
+The manual <strong>shall</strong> specify system requirements and
+dependencies - The manual <strong>shall</strong> provide software
+architecture overview</p>
+<h2 id="installation-procedures">4. Installation Procedures</h2>
+<h3 id="pre-installation-requirements">4.1 Pre-Installation
+Requirements</h3>
+<p><strong>SIOM-005: Prerequisites</strong> - The manual
+<strong>shall</strong> specify hardware and software prerequisites - The
+manual <strong>shall</strong> describe system preparation procedures -
+The manual <strong>shall</strong> include compatibility verification
+steps</p>
+<h3 id="installation-process">4.2 Installation Process</h3>
+<p><strong>SIOM-006: Installation Steps</strong> - The manual
+<strong>shall</strong> provide step-by-step installation instructions -
+The manual <strong>shall</strong> include configuration procedures - The
+manual <strong>shall</strong> describe installation verification
+methods</p>
+<h3 id="post-installation-setup">4.3 Post-Installation Setup</h3>
+<p><strong>SIOM-007: Setup Procedures</strong> - The manual
+<strong>shall</strong> describe post-installation configuration - The
+manual <strong>shall</strong> specify user account setup procedures -
+The manual <strong>shall</strong> include system integration steps</p>
+<h2 id="operation-procedures">5. Operation Procedures</h2>
+<h3 id="system-startup">5.1 System Startup</h3>
+<p><strong>SIOM-008: Startup Procedures</strong> - The manual
+<strong>shall</strong> describe system startup procedures - The manual
+<strong>shall</strong> specify initialization processes - The manual
+<strong>shall</strong> include startup verification steps</p>
+<h3 id="normal-operations">5.2 Normal Operations</h3>
+<p><strong>SIOM-009: Operational Procedures</strong> - The manual
+<strong>shall</strong> describe normal operational procedures - The
+manual <strong>shall</strong> specify user interface usage - The manual
+<strong>shall</strong> include data management procedures</p>
+<h3 id="system-shutdown">5.3 System Shutdown</h3>
+<p><strong>SIOM-010: Shutdown Procedures</strong> - The manual
+<strong>shall</strong> describe system shutdown procedures - The manual
+<strong>shall</strong> specify data backup procedures - The manual
+<strong>shall</strong> include shutdown verification steps</p>
+<h2 id="maintenance-procedures">6. Maintenance Procedures</h2>
+<p><strong>SIOM-011: Maintenance Activities</strong> - The manual
+<strong>shall</strong> describe routine maintenance procedures - The
+manual <strong>shall</strong> specify backup and recovery procedures -
+The manual <strong>shall</strong> include system monitoring
+procedures</p>
+<h2 id="troubleshooting">7. Troubleshooting</h2>
+<p><strong>SIOM-012: Problem Resolution</strong> - The manual
+<strong>shall</strong> provide troubleshooting procedures - The manual
+<strong>shall</strong> include common problem solutions - The manual
+<strong>shall</strong> describe escalation procedures</p>
+<h2 id="notes">8. Notes</h2>
+<ul>
+<li><strong>SIOM</strong>: Software Installation and Operation
+Manual</li>
+<li><strong>System</strong>: Software system and its components</li>
+</ul>
+</body>
+</html>

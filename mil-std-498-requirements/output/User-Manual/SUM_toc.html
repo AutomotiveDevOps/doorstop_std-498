@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Development Team" />
+  <meta name="dcterms.date" content="2024-06-26" />
+  <title>Software User Manual (SUM)</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Software User Manual (SUM)</h1>
+<p class="author">Development Team</p>
+<p class="date">2024-06-26</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#software-user-manual-sum"
+id="toc-software-user-manual-sum">Software User Manual (SUM)</a>
+<ul>
+<li><a href="#scope" id="toc-scope">1. Scope</a>
+<ul>
+<li><a href="#identification" id="toc-identification">1.1
+Identification</a></li>
+<li><a href="#manual-overview" id="toc-manual-overview">1.2 Manual
+Overview</a></li>
+</ul></li>
+<li><a href="#referenced-documents" id="toc-referenced-documents">2.
+Referenced Documents</a></li>
+<li><a href="#software-overview" id="toc-software-overview">3. Software
+Overview</a></li>
+<li><a href="#getting-started" id="toc-getting-started">4. Getting
+Started</a>
+<ul>
+<li><a href="#installation-and-setup"
+id="toc-installation-and-setup">4.1 Installation and Setup</a></li>
+<li><a href="#first-use" id="toc-first-use">4.2 First Use</a></li>
+</ul></li>
+<li><a href="#user-interface" id="toc-user-interface">5. User
+Interface</a></li>
+<li><a href="#features-and-functions" id="toc-features-and-functions">6.
+Features and Functions</a>
+<ul>
+<li><a href="#core-features" id="toc-core-features">6.1 Core
+Features</a></li>
+<li><a href="#advanced-features" id="toc-advanced-features">6.2 Advanced
+Features</a></li>
+</ul></li>
+<li><a href="#data-management" id="toc-data-management">7. Data
+Management</a></li>
+<li><a href="#troubleshooting" id="toc-troubleshooting">8.
+Troubleshooting</a></li>
+<li><a href="#notes" id="toc-notes">9. Notes</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="software-user-manual-sum">Software User Manual (SUM)</h1>
+<h2 id="scope">1. Scope</h2>
+<h3 id="identification">1.1 Identification</h3>
+<p><strong>SUM-001: Manual Identification</strong> - The manual
+<strong>shall</strong> be identified by the following information: -
+<strong>Manual Name</strong>: [Manual Name] - <strong>Manual
+Identifier</strong>: [SUM-001] - <strong>Version</strong>: 1.0 -
+<strong>Classification</strong>: [Unclassified/Classified Level]</p>
+<h3 id="manual-overview">1.2 Manual Overview</h3>
+<p><strong>SUM-002: Manual Purpose</strong> - The manual
+<strong>shall</strong> provide user instructions and guidance - The
+manual <strong>shall</strong> describe software features and
+functionality - The manual <strong>shall</strong> cover troubleshooting
+and help procedures</p>
+<h2 id="referenced-documents">2. Referenced Documents</h2>
+<p><strong>SUM-003: Referenced Standards</strong> - MIL-STD-498:
+Software Development and Documentation - [Other applicable
+standards]</p>
+<h2 id="software-overview">3. Software Overview</h2>
+<p><strong>SUM-004: Software Description</strong> - The manual
+<strong>shall</strong> describe the software system and its purpose -
+The manual <strong>shall</strong> specify software features and
+capabilities - The manual <strong>shall</strong> provide system
+requirements and compatibility</p>
+<h2 id="getting-started">4. Getting Started</h2>
+<h3 id="installation-and-setup">4.1 Installation and Setup</h3>
+<p><strong>SUM-005: Initial Setup</strong> - The manual
+<strong>shall</strong> provide installation and setup instructions - The
+manual <strong>shall</strong> describe system requirements and
+prerequisites - The manual <strong>shall</strong> include configuration
+procedures</p>
+<h3 id="first-use">4.2 First Use</h3>
+<p><strong>SUM-006: Getting Started</strong> - The manual
+<strong>shall</strong> provide getting started instructions - The manual
+<strong>shall</strong> describe basic navigation and interface - The
+manual <strong>shall</strong> include tutorial or walkthrough
+procedures</p>
+<h2 id="user-interface">5. User Interface</h2>
+<p><strong>SUM-007: Interface Description</strong> - The manual
+<strong>shall</strong> describe the user interface components - The
+manual <strong>shall</strong> specify menu structures and navigation -
+The manual <strong>shall</strong> define user interaction patterns</p>
+<h2 id="features-and-functions">6. Features and Functions</h2>
+<h3 id="core-features">6.1 Core Features</h3>
+<p><strong>SUM-008: Feature Descriptions</strong> - The manual
+<strong>shall</strong> describe all software features and functions -
+The manual <strong>shall</strong> provide step-by-step usage
+instructions - The manual <strong>shall</strong> include examples and
+use cases</p>
+<h3 id="advanced-features">6.2 Advanced Features</h3>
+<p><strong>SUM-009: Advanced Usage</strong> - The manual
+<strong>shall</strong> describe advanced features and capabilities - The
+manual <strong>shall</strong> provide advanced usage instructions - The
+manual <strong>shall</strong> include tips and best practices</p>
+<h2 id="data-management">7. Data Management</h2>
+<p><strong>SUM-010: Data Operations</strong> - The manual
+<strong>shall</strong> describe data input and output procedures - The
+manual <strong>shall</strong> specify data storage and retrieval methods
+- The manual <strong>shall</strong> include data backup and recovery
+procedures</p>
+<h2 id="troubleshooting">8. Troubleshooting</h2>
+<p><strong>SUM-011: Problem Resolution</strong> - The manual
+<strong>shall</strong> provide troubleshooting procedures - The manual
+<strong>shall</strong> include common problem solutions - The manual
+<strong>shall</strong> describe help and support resources</p>
+<h2 id="notes">9. Notes</h2>
+<ul>
+<li><strong>SUM</strong>: Software User Manual</li>
+<li><strong>User</strong>: End user of the software system</li>
+</ul>
+</body>
+</html>
