@@ -25,15 +25,29 @@ def export_document(doc_path: str, output_path: str) -> bool:
     try:
         print(f"Exporting {doc_path} to {output_path}...")
         
-        # Load the document
-        document = Document(doc_path)
+        # Change to the doorstop directory for proper document loading
+        original_dir = os.getcwd()
+        doorstop_dir = os.path.dirname(doc_path)
+        os.chdir(doorstop_dir)
+        
+        # Load the document using just the document name
+        doc_name = os.path.basename(doc_path)
+        document = Document(doc_name)
         
         # Export to YAML using the exporter module
         exporter.export(document, output_path, '.yml')
         
+        # Change back to original directory
+        os.chdir(original_dir)
+        
         print(f"Successfully exported {doc_path}")
         return True
     except Exception as e:
+        # Change back to original directory in case of error
+        try:
+            os.chdir(original_dir)
+        except:
+            pass
         print(f"Error exporting {doc_path}: {e}")
         return False
 
@@ -43,15 +57,29 @@ def validate_document(doc_path: str) -> bool:
     try:
         print(f"Validating {doc_path}...")
         
-        # Load the document
-        document = Document(doc_path)
+        # Change to the doorstop directory for proper document loading
+        original_dir = os.getcwd()
+        doorstop_dir = os.path.dirname(doc_path)
+        os.chdir(doorstop_dir)
+        
+        # Load the document using just the document name
+        doc_name = os.path.basename(doc_path)
+        document = Document(doc_name)
         
         # Validate
         document.validate()
         
+        # Change back to original directory
+        os.chdir(original_dir)
+        
         print(f"Successfully validated {doc_path}")
         return True
     except Exception as e:
+        # Change back to original directory in case of error
+        try:
+            os.chdir(original_dir)
+        except:
+            pass
         print(f"Error validating {doc_path}: {e}")
         return False
 
