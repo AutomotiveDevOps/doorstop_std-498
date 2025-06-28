@@ -1,0 +1,206 @@
+SDP-001:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: E8-aUENPK_yI9uJNF_S36oGIFJo3PYocuY9WRfSLPWQ=
+  text: |
+    The project **shall** be identified by the following information:
+    **Project Name**: [Project Name]
+    **Project Identifier**: [PRJ-001]
+    **Version**: 1.0
+    **Classification**: [Unclassified/Classified Level]
+
+    ### 1.2 Plan Overview
+  title: Project Identification
+  uid: SDP-001
+
+SDP-002:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: MN2u_aHrif_i6g2a6OL1cJEa9Wo1b83BSucwf06IQP4=
+  text: |
+    The plan **shall** define the approach for software development
+    The plan **shall** describe the project organization and schedule
+    The plan **shall** specify quality assurance and risk management
+
+    ## 2. Referenced Documents
+  title: Plan Purpose
+  uid: SDP-002
+
+SDP-003:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: 8FzY9rwwLfWOeJt3nX2UtXKm5QMAkZmSGR7ADWKZFeI=
+  text: |
+    MIL-STD-498: Software Development and Documentation
+    [Other applicable standards]
+
+    ## 3. Management
+
+    ### 3.1 Organization
+  title: Referenced Standards
+  uid: SDP-003
+
+SDP-004:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: 4dMvC_Wb-MArsZfr9LgK4jAGJd9u2PTUFC9ydVI3w0I=
+  text: |
+    The project **shall** define roles and responsibilities
+    The project **shall** identify key stakeholders
+    The project **shall** establish reporting structure
+
+    ### 3.2 Schedule
+  title: Project Organization
+  uid: SDP-004
+
+SDP-005:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: iwWhFtHntj0KcEl-mhDuhj86xk_fkBBXoSZWs7OtcUg=
+  text: |
+    The project **shall** define major milestones
+    The project **shall** provide a Gantt chart or timeline
+    The project **shall** update the schedule as needed
+
+    ### 3.3 Resources
+  title: Project Schedule
+  uid: SDP-005
+
+SDP-006:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: DDprEZbsqZpw-8W_0eyPu-6P76_hNfB3V3qXp7numcs=
+  text: |
+    The project **shall** allocate personnel, tools, and facilities
+    The project **shall** manage budget and procurement
+    The project **shall** monitor resource usage
+
+    ## 4. Technical Approach
+
+    ### 4.1 Development Process
+  title: Resource Allocation
+  uid: SDP-006
+
+SDP-007:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: UgxGuXeW3CDQCd0KauEnU4gnLyAavwPXUd0hKydPDQ8=
+  text: |
+    The project **shall** follow [agile/waterfall/iterative] process
+    The project **shall** define development phases
+    The project **shall** document process tailoring
+
+    ### 4.2 Methods, Tools, and Techniques
+  title: Process Model
+  uid: SDP-007
+
+SDP-008:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: n4HhoT3nFrfaUtsTYX5NMehaMp7C6ug_5h3JCzBSjKk=
+  text: |
+    The project **shall** use [specified methods and tools]
+    The project **shall** document tool usage and configuration
+    The project **shall** provide training for tools
+
+    ### 4.3 Standards
+  title: Methods and Tools
+  uid: SDP-008
+
+SDP-009:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: gSpaGOk9TtTCiYvuB-kcNbCsc3HAa1D3Hhv320xq2XI=
+  text: |
+    The project **shall** comply with coding, documentation, and testing standards
+    The project **shall** review standards compliance regularly
+    The project **shall** update standards as needed
+
+    ## 5. Quality Assurance
+  title: Standards Compliance
+  uid: SDP-009
+
+SDP-010:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: J_ItByYNcklslzd7-3GyCe9XkiJULE0_qn0k-KiyOlw=
+  text: |
+    The project **shall** define quality objectives and metrics
+    The project **shall** conduct reviews and audits
+    The project **shall** implement corrective actions
+
+    ## 6. Risk Management
+  title: Quality Assurance Plan
+  uid: SDP-010
+
+SDP-011:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: 6sXT6BUp6cUkhPUaNi92ubvC2_uCUXLWFm4DwdFn8yo=
+  text: |
+    The project **shall** identify and assess risks
+    The project **shall** develop mitigation strategies
+    The project **shall** monitor and report risks
+
+    ## 7. Notes
+    **SDP**: Software Development Plan
+    **QA**: Quality Assurance
+    **Gantt Chart**: Project schedule visualization
+  title: Risk Management Plan
+  uid: SDP-011
+

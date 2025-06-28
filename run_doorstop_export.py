@@ -14,6 +14,7 @@ from typing import List, Optional
 try:
     import doorstop
     from doorstop import Document, Tree
+    from doorstop import exporter
 except ImportError:
     print("Error: doorstop package not found. Please install it with: pip install doorstop")
     sys.exit(1)
@@ -27,8 +28,8 @@ def export_document(doc_path: str, output_path: str) -> bool:
         # Load the document
         document = Document(doc_path)
         
-        # Export to YAML
-        document.export(output_path, '.yml')
+        # Export to YAML using the exporter module
+        exporter.export(document, output_path, '.yml')
         
         print(f"Successfully exported {doc_path}")
         return True

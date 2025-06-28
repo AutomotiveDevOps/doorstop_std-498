@@ -1,0 +1,206 @@
+STP-001:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: jnHKlvFdJY4A3nNL_en7dL_tQegvCKNXhvCvpc48d2M=
+  text: |
+    The test plan **shall** be identified by the following information:
+    **Test Plan Name**: [Test Plan Name]
+    **Test Plan Identifier**: [TP-001]
+    **Version**: 1.0
+    **Classification**: [Unclassified/Classified Level]
+
+    ### 1.2 Plan Overview
+  title: Test Plan Identification
+  uid: STP-001
+
+STP-002:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: HdHor5cYcEf7C5lYTVs2CdFRGBbAbdq6DPbCdFenoco=
+  text: |
+    The plan **shall** define the approach for software testing
+    The plan **shall** describe test organization and schedule
+    The plan **shall** specify quality assurance and risk management
+
+    ## 2. Referenced Documents
+  title: Plan Purpose
+  uid: STP-002
+
+STP-003:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: Ajmf0_eGYT4BvoHgyfpWmUqeM9EaGn2nM17jBOt7VIU=
+  text: |
+    MIL-STD-498: Software Development and Documentation
+    [Other applicable standards]
+
+    ## 3. Test Management
+
+    ### 3.1 Organization
+  title: Referenced Standards
+  uid: STP-003
+
+STP-004:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: pLZJcthpeHNq_2LMHcYpYpUyxs27IXvIwKv1YH3NBQ8=
+  text: |
+    The plan **shall** define roles and responsibilities
+    The plan **shall** identify key stakeholders
+    The plan **shall** establish reporting structure
+
+    ### 3.2 Schedule
+  title: Test Organization
+  uid: STP-004
+
+STP-005:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: _WPhVliu82-foKx1Si0_bA-wX6Nqc3dIiOIzsd5465s=
+  text: |
+    The plan **shall** define major milestones
+    The plan **shall** provide a Gantt chart or timeline
+    The plan **shall** update the schedule as needed
+
+    ### 3.3 Resources
+  title: Test Schedule
+  uid: STP-005
+
+STP-006:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: 9hLlGBcz_eB17ueBzgJvJu9AXUm-Y5T0XFi8LWpPJhA=
+  text: |
+    The plan **shall** allocate personnel, tools, and facilities
+    The plan **shall** manage budget and procurement
+    The plan **shall** monitor resource usage
+
+    ## 4. Test Approach
+
+    ### 4.1 Test Process
+  title: Resource Allocation
+  uid: STP-006
+
+STP-007:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: R16q0PIdLOol5kbRofZQeAnLXDEqfcFp-SrKx6twWg0=
+  text: |
+    The plan **shall** follow [agile/waterfall/iterative] process
+    The plan **shall** define test phases
+    The plan **shall** document process tailoring
+
+    ### 4.2 Methods, Tools, and Techniques
+  title: Test Process Model
+  uid: STP-007
+
+STP-008:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: MD8ZrOpG1PWgCn6E_yv-OlqsOfMMUou_OCt97U-oQu8=
+  text: |
+    The plan **shall** use [specified methods and tools]
+    The plan **shall** document tool usage and configuration
+    The plan **shall** provide training for tools
+
+    ### 4.3 Standards
+  title: Methods and Tools
+  uid: STP-008
+
+STP-009:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: kkjpQm4vqRtksaAeN0WG_sSu27safD8pkbkEYjHqIxc=
+  text: |
+    The plan **shall** comply with testing standards
+    The plan **shall** review standards compliance regularly
+    The plan **shall** update standards as needed
+
+    ## 5. Quality Assurance
+  title: Standards Compliance
+  uid: STP-009
+
+STP-010:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: EnTRzxWNg947_by7qzReCIqzNQJlQIOPQLJooZ-Ekk4=
+  text: |
+    The plan **shall** define quality objectives and metrics
+    The plan **shall** conduct reviews and audits
+    The plan **shall** implement corrective actions
+
+    ## 6. Risk Management
+  title: Quality Assurance Plan
+  uid: STP-010
+
+STP-011:
+  active: true
+  derived: false
+  header: ''
+  level: 1.0
+  links: []
+  normative: true
+  ref: ''
+  reviewed: _5lpN00L0XgzCyRZtW_Sh7sQ81v4-s74SYnT84TfxT0=
+  text: |
+    The plan **shall** identify and assess risks
+    The plan **shall** develop mitigation strategies
+    The plan **shall** monitor and report risks
+
+    ## 7. Notes
+    **STP**: Software Test Plan
+    **QA**: Quality Assurance
+    **Gantt Chart**: Project schedule visualization
+  title: Risk Management Plan
+  uid: STP-011
+
