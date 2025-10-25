@@ -17,10 +17,12 @@ VENV := venv
 PIP := ${VENV}/bin/pip
 DOORSTOP := ${VENV}/bin/doorstop
 PYTHON_VENV := ${VENV}/bin/python
+STRICTDOC := ${VENV}/bin/strictdoc
 
 # Fallback doorstop command for CI/CD environments
 DOORSTOP_FALLBACK := python3 -m doorstop
 DOORSTOP_SCRIPT := python3 run_doorstop.py
+STRICTDOC_FALLBACK := python3 -m strictdoc
 
 # Doorstop document prefixes
 DOCUMENTS := SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP
@@ -29,6 +31,8 @@ DOCUMENTS := SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM 
 EXPORT_DIR := exports
 PUBLISH_DIR := publications
 REPORTS_DIR := reports
+STRICTDOC_DIR := mil-std-498-strictdoc
+STRICTDOC_OUTPUT_DIR := output/strictdoc
 
 # Default target
 .PHONY: all
@@ -43,14 +47,14 @@ ${VENV}:
 	fi
 	@echo "Installing dependencies in virtual environment..."
 	@${VENV}/bin/pip install --upgrade pip || { echo "Failed to upgrade pip"; exit 1; }
-	@${VENV}/bin/pip install doorstop python-frontmatter || { echo "Failed to install doorstop in venv"; exit 1; }
+	@${VENV}/bin/pip install doorstop python-frontmatter strictdoc || { echo "Failed to install dependencies in venv"; exit 1; }
 	@echo "Virtual environment created and dependencies installed: ${VENV}"
 
 # Install dependencies with fallback options
 .PHONY: install-deps
 install-deps: ${VENV}
 	@echo "Installing dependencies..."
-	@${PIP} install doorstop python-frontmatter || { echo "Failed to install in venv, trying system install..."; pip3 install doorstop python-frontmatter; }
+	@${PIP} install doorstop python-frontmatter strictdoc || { echo "Failed to install in venv, trying system install..."; pip3 install doorstop python-frontmatter strictdoc; }
 	@echo "Dependencies installed"
 
 # Convert requirements from markdown to doorstop format
@@ -62,8 +66,13 @@ convert-requirements: install-deps
 
 # Generate all doorstop outputs
 .PHONY: generate-all
-generate-all: install-deps create-dirs export-all publish-all validate-all generate-reports
+generate-all: install-deps create-dirs export-all publish-all validate-all generate-reports generate-strictdoc-all
 	@echo "All doorstop outputs generated"
+
+# Generate all StrictDoc outputs
+.PHONY: generate-strictdoc-all
+generate-strictdoc-all: install-deps create-dirs generate-strictdoc-html validate-strictdoc export-strictdoc
+	@echo "All StrictDoc outputs generated"
 
 # Create output directories
 .PHONY: create-dirs
@@ -71,6 +80,7 @@ create-dirs:
 	mkdir -p ${EXPORT_DIR}
 	mkdir -p ${PUBLISH_DIR}
 	mkdir -p ${REPORTS_DIR}
+	mkdir -p ${STRICTDOC_OUTPUT_DIR}
 
 # Export all documents to YAML format with fallback
 .PHONY: export-all
@@ -138,6 +148,47 @@ publish-pdf: install-deps create-dirs
 		fi; \
 	done
 	@echo "LaTeX publications complete (convert .tex to PDF manually if needed)"
+
+# Generate StrictDoc HTML output
+.PHONY: generate-strictdoc-html
+generate-strictdoc-html: install-deps create-dirs
+	@echo "Generating StrictDoc HTML output..."
+	@mkdir -p ${STRICTDOC_OUTPUT_DIR}/html
+	@if [ -f "${STRICTDOC}" ]; then \
+		${STRICTDOC} export ${STRICTDOC_DIR} --output-dir ${STRICTDOC_OUTPUT_DIR}/html --formats html; \
+	elif command -v python3 >/dev/null 2>&1 && python3 -c "import strictdoc" 2>/dev/null; then \
+		${STRICTDOC_FALLBACK} export ${STRICTDOC_DIR} --output-dir ${STRICTDOC_OUTPUT_DIR}/html --formats html; \
+	else \
+		echo "StrictDoc not available, skipping HTML generation"; \
+	fi
+	@echo "StrictDoc HTML generation completed"
+
+# Validate StrictDoc files (using export as validation)
+.PHONY: validate-strictdoc
+validate-strictdoc: install-deps
+	@echo "Validating StrictDoc files..."
+	@if [ -f "${STRICTDOC}" ]; then \
+		${STRICTDOC} export ${STRICTDOC_DIR} --output-dir /tmp/strictdoc-validation --formats sdoc >/dev/null 2>&1 && echo "StrictDoc files are valid"; \
+	elif command -v python3 >/dev/null 2>&1 && python3 -c "import strictdoc" 2>/dev/null; then \
+		${STRICTDOC_FALLBACK} export ${STRICTDOC_DIR} --output-dir /tmp/strictdoc-validation --formats sdoc >/dev/null 2>&1 && echo "StrictDoc files are valid"; \
+	else \
+		echo "StrictDoc not available, skipping validation"; \
+	fi
+	@echo "StrictDoc validation completed"
+
+# Export StrictDoc to various formats
+.PHONY: export-strictdoc
+export-strictdoc: install-deps create-dirs
+	@echo "Exporting StrictDoc to various formats..."
+	@mkdir -p ${STRICTDOC_OUTPUT_DIR}/export
+	@if [ -f "${STRICTDOC}" ]; then \
+		${STRICTDOC} export ${STRICTDOC_DIR} --output-dir ${STRICTDOC_OUTPUT_DIR}/export --formats html,pdf,markdown; \
+	elif command -v python3 >/dev/null 2>&1 && python3 -c "import strictdoc" 2>/dev/null; then \
+		${STRICTDOC_FALLBACK} export ${STRICTDOC_DIR} --output-dir ${STRICTDOC_OUTPUT_DIR}/export --formats html,pdf,markdown; \
+	else \
+		echo "StrictDoc not available, skipping export"; \
+	fi
+	@echo "StrictDoc export completed"
 
 # Validate all documents with fallback
 .PHONY: validate-all
@@ -263,6 +314,7 @@ clean:
 	rm -rf ${EXPORT_DIR}
 	rm -rf ${PUBLISH_DIR}
 	rm -rf ${REPORTS_DIR}
+	rm -rf ${STRICTDOC_OUTPUT_DIR}
 	@echo "Generated outputs cleaned"
 
 # Clean everything including virtual environment
@@ -287,6 +339,14 @@ help:
 	@echo "  validate-all           - Validate all documents"
 	@echo "  generate-reports       - Generate analysis reports"
 	@echo "  generate-master-report - Generate comprehensive master report"
+	@echo ""
+	@echo "StrictDoc targets:"
+	@echo "  generate-strictdoc-all - Generate all StrictDoc outputs"
+	@echo "  generate-strictdoc-html- Generate StrictDoc HTML output"
+	@echo "  validate-strictdoc     - Validate StrictDoc files"
+	@echo "  export-strictdoc      - Export StrictDoc to various formats"
+	@echo ""
+	@echo "Utility targets:"
 	@echo "  clean                  - Clean generated outputs"
 	@echo "  clean-all              - Clean everything including venv"
 	@echo "  help                   - Show this help message"
@@ -295,6 +355,7 @@ help:
 	@echo "  ${EXPORT_DIR}     - YAML exports"
 	@echo "  ${PUBLISH_DIR}    - Published documents"
 	@echo "  ${REPORTS_DIR}    - Analysis reports"
+	@echo "  ${STRICTDOC_OUTPUT_DIR} - StrictDoc outputs"
 
 # Quick setup target
 .PHONY: quick-setup

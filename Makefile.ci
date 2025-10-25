@@ -15,6 +15,7 @@
 PYTHON := python3
 PIP := pip3
 DOORSTOP := doorstop
+STRICTDOC := strictdoc
 
 # Doorstop document prefixes
 DOCUMENTS := SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM SIP FSM DBDD OCD STR STRP
@@ -23,6 +24,8 @@ DOCUMENTS := SRS SDD SSS IRS IDD SSDD SDP STP STD SPS SVD SUM CPM COM SCOM SIOM 
 EXPORT_DIR := exports
 PUBLISH_DIR := publications
 REPORTS_DIR := reports
+STRICTDOC_DIR := mil-std-498-strictdoc
+STRICTDOC_OUTPUT_DIR := output/strictdoc
 
 # Default target
 .PHONY: all
@@ -33,7 +36,7 @@ all: install-deps convert-requirements generate-all
 install-deps:
 	@echo "Installing doorstop and dependencies globally..."
 	@${PIP} install --upgrade pip
-	@${PIP} install doorstop python-frontmatter
+	@${PIP} install doorstop python-frontmatter strictdoc
 	@echo "Dependencies installed globally"
 
 # Convert requirements from markdown to doorstop format
@@ -45,8 +48,13 @@ convert-requirements: install-deps
 
 # Generate all doorstop outputs
 .PHONY: generate-all
-generate-all: install-deps create-dirs export-all publish-all validate-all generate-reports
+generate-all: install-deps create-dirs export-all publish-all validate-all generate-reports generate-strictdoc-all
 	@echo "All doorstop outputs generated"
+
+# Generate all StrictDoc outputs
+.PHONY: generate-strictdoc-all
+generate-strictdoc-all: install-deps create-dirs generate-strictdoc-html validate-strictdoc export-strictdoc
+	@echo "All StrictDoc outputs generated"
 
 # Create output directories
 .PHONY: create-dirs
@@ -54,6 +62,7 @@ create-dirs:
 	mkdir -p ${EXPORT_DIR}
 	mkdir -p ${PUBLISH_DIR}
 	mkdir -p ${REPORTS_DIR}
+	mkdir -p ${STRICTDOC_OUTPUT_DIR}
 
 # Export all documents to YAML format
 .PHONY: export-all
@@ -103,6 +112,29 @@ publish-pdf: install-deps create-dirs
 		${DOORSTOP} publish $$doc ${PUBLISH_DIR}/latex/$$doc.tex --latex; \
 	done
 	@echo "LaTeX publications complete (convert .tex to PDF manually if needed)"
+
+# Generate StrictDoc HTML output
+.PHONY: generate-strictdoc-html
+generate-strictdoc-html: install-deps create-dirs
+	@echo "Generating StrictDoc HTML output..."
+	@mkdir -p ${STRICTDOC_OUTPUT_DIR}/html
+	@${STRICTDOC} export ${STRICTDOC_DIR} --output-dir ${STRICTDOC_OUTPUT_DIR}/html --formats html
+	@echo "StrictDoc HTML generation completed"
+
+# Validate StrictDoc files (using export as validation)
+.PHONY: validate-strictdoc
+validate-strictdoc: install-deps
+	@echo "Validating StrictDoc files..."
+	@${STRICTDOC} export ${STRICTDOC_DIR} --output-dir /tmp/strictdoc-validation --formats sdoc >/dev/null 2>&1 && echo "StrictDoc files are valid"
+	@echo "StrictDoc validation completed"
+
+# Export StrictDoc to various formats
+.PHONY: export-strictdoc
+export-strictdoc: install-deps create-dirs
+	@echo "Exporting StrictDoc to various formats..."
+	@mkdir -p ${STRICTDOC_OUTPUT_DIR}/export
+	@${STRICTDOC} export ${STRICTDOC_DIR} --output-dir ${STRICTDOC_OUTPUT_DIR}/export --formats html,pdf,markdown
+	@echo "StrictDoc export completed"
 
 # Validate all documents
 .PHONY: validate-all
@@ -224,6 +256,7 @@ clean:
 	rm -rf ${EXPORT_DIR}
 	rm -rf ${PUBLISH_DIR}
 	rm -rf ${REPORTS_DIR}
+	rm -rf ${STRICTDOC_OUTPUT_DIR}
 	@echo "Generated outputs cleaned"
 
 # Clean everything including doorstop documents
@@ -249,6 +282,14 @@ help:
 	@echo "  validate-all           - Validate all documents"
 	@echo "  generate-reports       - Generate analysis reports"
 	@echo "  generate-master-report - Generate comprehensive master report"
+	@echo ""
+	@echo "StrictDoc targets:"
+	@echo "  generate-strictdoc-all - Generate all StrictDoc outputs"
+	@echo "  generate-strictdoc-html- Generate StrictDoc HTML output"
+	@echo "  validate-strictdoc     - Validate StrictDoc files"
+	@echo "  export-strictdoc      - Export StrictDoc to various formats"
+	@echo ""
+	@echo "Utility targets:"
 	@echo "  clean                  - Clean generated outputs"
 	@echo "  clean-all              - Clean everything including doorstop docs"
 	@echo "  help                   - Show this help message"
@@ -257,6 +298,7 @@ help:
 	@echo "  ${EXPORT_DIR}     - YAML exports"
 	@echo "  ${PUBLISH_DIR}    - Published documents"
 	@echo "  ${REPORTS_DIR}    - Analysis reports"
+	@echo "  ${STRICTDOC_OUTPUT_DIR} - StrictDoc outputs"
 
 # Quick setup target
 .PHONY: quick-setup

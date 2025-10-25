@@ -1,117 +1,13 @@
 [DOCUMENT]
 TITLE: MIL-STD-498 SCOM (Software Configuration Management Plan)
 
-[SECTION]
-TITLE: 1. Scope
 
-[SECTION]
-TITLE: 1.1 Identification
 
-[REQUIREMENT]
-UID: SCOM-001
-TITLE: Document Identification
-STATEMENT: This document shall be identified as the Software Configuration Management Plan (SCOM) for the Satellite Communication Management System (SCMS), version 1.0.
-RATIONALE: Proper document identification ensures configuration management and traceability.
 
-[/SECTION]
 
-[SECTION]
-TITLE: 1.2 Document overview
 
-[REQUIREMENT]
-UID: SCOM-002
-TITLE: Document Purpose
-STATEMENT: This document shall define configuration management procedures and policies, specify version control and change management processes, and describe configuration identification and control methods.
-RATIONALE: Clear document purpose ensures comprehensive configuration management implementation.
 
-[/SECTION]
 
-[/SECTION]
 
-[SECTION]
-TITLE: 2. Referenced documents
 
-[REQUIREMENT]
-UID: SCOM-003
-TITLE: Reference Standards
-STATEMENT: The configuration management process shall comply with MIL-STD-498, IEEE 828, and DoD configuration management requirements for software development projects.
-RATIONALE: Compliance with established standards ensures proper configuration management practices.
 
-[/SECTION]
-
-[SECTION]
-TITLE: 3. Configuration management overview
-
-[REQUIREMENT]
-UID: SCOM-004
-TITLE: CM Process Description
-STATEMENT: The configuration management process shall include configuration identification, configuration control, configuration status accounting, and configuration audits with defined roles and responsibilities.
-RATIONALE: Comprehensive CM process ensures systematic management of software configurations.
-
-[/SECTION]
-
-[SECTION]
-TITLE: 4. Configuration identification
-
-[REQUIREMENT]
-UID: SCOM-005
-TITLE: Identification Methods
-STATEMENT: Configuration items shall be identified using standardized naming conventions, version numbering schemes, and baseline identification procedures for all software components and documentation.
-RATIONALE: Consistent identification methods ensure traceability and configuration control.
-
-[/SECTION]
-
-[SECTION]
-TITLE: 5. Configuration control
-
-[REQUIREMENT]
-UID: SCOM-006
-TITLE: Control Procedures
-STATEMENT: Change control procedures shall include formal change requests, approval processes, configuration control board responsibilities, and impact analysis for all configuration changes.
-RATIONALE: Formal control procedures ensure proper evaluation and approval of configuration changes.
-
-[/SECTION]
-
-[SECTION]
-TITLE: 6. Configuration status accounting
-
-[REQUIREMENT]
-UID: SCOM-007
-TITLE: Status Tracking
-STATEMENT: Configuration status tracking shall include status reporting requirements, configuration audit procedures, and automated tracking systems for all configuration items.
-RATIONALE: Status tracking ensures visibility into configuration changes and system state.
-
-[/SECTION]
-
-[SECTION]
-TITLE: 7. Configuration audits
-
-[REQUIREMENT]
-UID: SCOM-008
-TITLE: Audit Procedures
-STATEMENT: Configuration audits shall include functional configuration audits, physical configuration audits, and audit reporting with follow-up procedures for identified discrepancies.
-RATIONALE: Regular audits ensure configuration integrity and compliance with established baselines.
-
-[/SECTION]
-
-[SECTION]
-TITLE: 8. Release management
-
-[REQUIREMENT]
-UID: SCOM-009
-TITLE: Release Procedures
-STATEMENT: Software release procedures shall include release packaging, distribution methods, release verification and validation, and rollback procedures for failed releases.
-RATIONALE: Structured release management ensures reliable software delivery and deployment.
-
-[/SECTION]
-
-[SECTION]
-TITLE: 9. Notes
-
-[REQUIREMENT]
-UID: SCOM-010
-TITLE: Document Notes
-STATEMENT: This configuration management plan shall be maintained under configuration control with version history and change tracking to ensure plan consistency and traceability.
-RATIONALE: Document maintenance ensures configuration management accuracy and stakeholder communication.
-
-[/SECTION]
